@@ -1,0 +1,234 @@
+* Scales
+** includes
+#+name: incl
+#+begin_src lilypond
+  \version "2.24"
+  \include "ekme-heji.ily"
+#+end_src
+** pure
+#+begin_src lilypond :file scordatura.png
+  scale = {
+    \clef treble
+    a,4^"0"
+    bes,^"17"
+    b,^"9"
+    c^"19"
+    e^"2"
+    f^"51"
+    fis^"27"
+    g^"57"
+  }
+
+  \score {
+    \new Staff <<
+      \fixed c'' { \scale  }
+    >>
+    %%            \midi {}
+  }
+#+end_src
+
+** standard tuning
+#+begin_src lilypond :file standard.png :noweb yes 
+  <<incl>>
+    penta = { e
+  	g
+  	a
+  	c'
+  	d'
+  	    }
+
+    pentab = {
+        eoaa
+        gsoba
+        boaa
+        c'
+        d'
+    }
+    pentaTest = {
+        fuca
+        boaa
+        boba
+        asoca
+        coaa'
+    }
+    music = {
+      \clef bass
+      \fixed c {
+  	\penta
+      }
+      \clef treble
+      \fixed c' {
+  	\penta
+      }
+      \fixed c'' {
+  	\penta
+      }
+      \fixed c''' {
+  	e
+  	g
+      }
+  }
+
+    \score {
+        \new Staff <<
+  	  \fixed c'' { \music }
+        >>
+        \midi {}
+        \layout {}
+    }
+#+end_src
+
+#+RESULTS:
+[[file:standard.png]]
+** scordatura
+This is the suggested scale,
+#+begin_src lilypond :file scordatura.png :noweb yes 
+  <<incl>>
+
+    pentaA = {
+        eoaa\1
+        g\2
+        aoaa\3
+        c'\4
+        d'\5
+     
+    }
+    pentaB = {
+        dsoaa\6
+        fsoba\7
+        asoaa\8
+        coaa'\9
+        doaa'\10
+    }
+    pentaC = {
+        eoba\11
+        foca\12
+        gsoba\13
+        coaa'\14
+        csoca'\15
+        
+    }
+    music = {
+        \accidentalStyle "dodecaphonic"
+      \clef bass
+      \fixed c {
+  	\pentaA
+      }
+      \clef treble
+      \fixed c' {
+  	\pentaB
+      }
+      \fixed c'' {
+  	\pentaC
+      }
+      \fixed c''' {
+  	eoaa\16
+%%  	gsoba
+      }
+  }
+
+    \score {
+        \new Staff <<
+  	  \fixed c'' { \music }
+        >>
+        \midi {}
+        \layout {}
+    }
+#+end_src
+
+#+RESULTS:
+[[file:scordatura.png]]
+** Chords
+#+begin_src lilypond :file chords.png :noweb yes
+  \version "2.24"	
+  \include "ekme-heji.ily"
+
+  music = {
+      \clef treble
+      \fixed c {
+  	<eoaa' dsoaa' eoba'>1
+  	<eoaa' dsoaa'' eoba'''>1
+  	<g c' fsoba' coaa''>1
+  	<aoaa dsoaa' coaa'' foca''>
+  }
+  }
+    musicb = {
+      \clef treble
+      \fixed c {
+        coaa'8
+        csoca'
+        coaa'
+        dsoaa'
+        doaa'
+        eoba'
+        fsoba'
+        foca'
+        asoaa
+        gsoba
+  }
+  }
+
+  triads = {
+      \fixed c {
+  	  <eoaa g>4
+  	  <g c'>
+  	  <aoaa c'>
+  	  <c' dsoaa'>
+  	  |
+  	  <d' fsoba'>
+  	  <dsoaa' fsoba'>
+  	  <fsoba' asoaa'>
+  	  <asoaa' coaa''>
+  	  |
+  	  <coaa'' eoba''> 
+  	  <doaa'' foca''>
+  	  <eoba'' gsoba''>
+  	  <foca'' coaa'''>
+  	  |
+  	  <gsoba'' coaa'''>
+  	  <coaa''' eoaa'''>
+  	  <csoca''' eoaa'''>
+  	  <eoaa''' gsoba'''>
+  	  |
+      }
+  }
+
+  \score {
+      \new Staff <<
+  	\set Staff.midiInstrument = "orchestral harp"
+  	\fixed c'' { \triads }
+      >>
+      \midi {}
+      \layout {}
+  }
+#+end_src
+
+#+RESULTS:
+[[file:chords.png]]
+
+* Table of pitches
+The strings and the notation
+|  1 | eoaa  | 5/4    |
+|  2 | g     | 3/2    |
+|  3 | aoaa  | 5/3    |
+|  4 | c     | 1/1    |
+|  5 | d     | 9/8    |
+|----+-------+--------|
+|  6 | dsoaa | 6/5    |
+|  7 | fsoba | 7/5    |
+|  8 | asoaa | 9/5    |
+|  9 | coaa  | 160/81 |
+| 10 | doaa  | 10/9   |
+|----+-------+--------|
+| 11 | eoba  | 9/7    |
+| 12 | foca  | 16/11  |
+| 13 | gsoba | 8/5    |
+| 14 | coaa  | 81/80  |
+| 15 | csoca | 11/10  |
+|----+-------+--------|
+| 16 | eoaa  | 5/4    |
+| 17 | gsoba | 8/5    |
+|    |       |        |
+|----+-------+--------|
+
+
