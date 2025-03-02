@@ -11,7 +11,9 @@ mydedication = "Ngyen Thanh Thuy"
 \include "includes/functions.ly"
 
 %%%%%%%%% Include statements for music %%%%%%%%%
-
+\include "includes/dan_tranh_A.ly"
+\include "includes/dan_tranh_B.ly"
+\include "includes/electronics_C.ly"
 
 \bookpart {
     \paper {
@@ -247,45 +249,82 @@ mydedication = "Ngyen Thanh Thuy"
 \bookpart {
     \score {
 	<<
-	    \new GrandStaff \with {
-		instrumentName = \markup \sans \small {"computer"}
-		shortInstrumentName = \markup \sans {""}
-		\override StaffGrouper.staffgroup-staff-spacing.basic-distance = #20
-	    } <<
-		\new Staff = "c_up" \with {
-		    \override VerticalAxisGroup.default-staff-staff-spacing =
-		    #'((basic-distance . 30)
-		       (minimum-distance . 9)
-		       (padding . 1)
-		       (stretchability . 10))
-		}
-		\fixed c' {
-		    \numericTimeSignature
-		    \tempo 4 = 50 \clef treble
-		    \override Staff.TimeSignature.transparent = ##t
-		    \set Staff.pedalSustainStyle = #'bracket
-		    \set Score.rehearsalMarkFormatter = #format-mark-circle-numbers
-%%%%%%%%%% top computer %%%%%%%%%%%
-		    
-		    d e f g
-		}
-		\new Staff = "c_down"
-		\fixed c {
-		    \override Staff.TimeSignature.transparent = ##t
-		    \set Staff.pedalSustainStyle = #'bracket
-		    \clef bass
-%%%%%%%%%% bass computer %%%%%%%%%%%		    
-		    c d e f
-		}
-	    >>
-	    \new Staff \with {
-		instrumentName = \markup \sans \small "dan tranh"
-		shortInstrumentName = \markup \sans ""
-		\consists "Span_arpeggio_engraver"
-	    }
-	    \fixed c' {
-		c d e f
-		}
+	    \new StaffGroup \with { instrumentName = "Dan Tranh" } <<
+  	      \new Staff  <<
+		  \set Staff.midiInstrument = "orchestral harp"
+		  \fixed c {
+		      \numericTimeSignature
+				% \override Staff.TimeSignature.transparent = ##f
+		      \tempo 4 = 60
+		      \override Staff.StringNumber.font-size = -4
+		      \override Staff.StringNumber.font-name = "Helvetica"
+		      \introAa
+		      \introBa
+		  }
+	      >>
+  	      \new Staff <<
+		  \set Staff.midiInstrument = "orchestral harp"
+		  \fixed c'' {
+		      \numericTimeSignature
+		      \override Staff.TimeSignature.transparent = ##t
+		      \tempo 4 = 60
+		      \set fontSize = -3
+		      \override Staff.Stem.stencil = ##f
+		      \introAb
+		      \introBb
+		  }
+	      >>
+  	  >>
+  	  \new Staff \with { instrumentName = "Electronics" } <<
+	      \fixed c'' {
+		  \numericTimeSignature
+		  \override Staff.TimeSignature.transparent = ##t\tempo 4 = 60
+		  \introAc
+		  \introBc
+		  \introCc
+		  \introDc
+	      }
+	  >>
+				% 	    \new GrandStaff \with {
+				% 		instrumentName = \markup \sans \small {"computer"}
+				% 		shortInstrumentName = \markup \sans {""}
+				% 		\override StaffGrouper.staffgroup-staff-spacing.basic-distance = #20
+				% 	    } <<
+				% 		\new Staff = "c_up" \with {
+				% 		    \override VerticalAxisGroup.default-staff-staff-spacing =
+				% 		    #'((basic-distance . 30)
+				% 		       (minimum-distance . 9)
+				% 		       (padding . 1)
+				% 		       (stretchability . 10))
+				% 		}
+				% 		\fixed c' {
+				% 		    \numericTimeSignature
+				% 		    \tempo 4 = 50 \clef treble
+				% 		    \override Staff.TimeSignature.transparent = ##t
+				% 		    \set Staff.pedalSustainStyle = #'bracket
+				% 		    \set Score.rehearsalMarkFormatter = #format-mark-circle-numbers
+				% %%%%%%%%%% top computer %%%%%%%%%%%
+	    
+				% 		    d e f g
+				% 		}
+				% 		\new Staff = "c_down"
+				% 		\fixed c {
+				% 		    \override Staff.TimeSignature.transparent = ##t
+				% 		    \set Staff.pedalSustainStyle = #'bracket
+				% 		    \clef bass
+				% %%%%%%%%%% bass computer %%%%%%%%%%%		    
+				% 		    c d e f
+				% 		}
+				% 	    >>
+				% 	    \new Staff \with {
+				% 		instrumentName = \markup \sans \small "dan tranh"
+				% 		shortInstrumentName = \markup \sans ""
+				% 		\consists "Span_arpeggio_engraver"
+				% 	    }
+				% 	    \fixed c' {
+				% 		c d e f
+				% 		}
+	    
 	>>
 	\layout {
 	    indent = 2\cm
@@ -296,6 +335,7 @@ mydedication = "Ngyen Thanh Thuy"
 		\override TimeSignature.font-size = #5.5
 		\override TimeSignature.extra-offset = #'(-1 . 5.5)
 		\override TimeSignature.font-name = #"Helvetica"
+		\consists "Horizontal_bracket_engraver"
 	    }
 	    
 	    \context {

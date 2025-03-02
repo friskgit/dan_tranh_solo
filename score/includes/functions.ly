@@ -22,7 +22,7 @@ rmark =
   \mark \markup {\sans \fontsize #9 \box \bold #rm }
   #})
 
- cue =
+cue =
 #(define-music-function
   (rm)
   (string?)
@@ -38,3 +38,16 @@ caes = {
     #(at-bar-line-substitute-caesura-type
       '((scripts . (fermata))))
 }
+
+mybracket = {
+    \override TextSpanner.style = #'line
+    \override TextSpanner.thickness = #3
+    \override TextSpanner.bound-details.right.arrow = ##t
+    \override TextSpanner.bound-details.left.text = #" "
+    \override TextSpanner.bound-details.right.text = #" "
+    \override TextSpanner.bound-details.right.padding = #0
+    \override TextSpanner.bound-details.left.padding = #0
+    \override TextSpanner.bound-details.right.stencil-align-dir-y = #CENTER
+    \override TextSpanner.bound-details.left.stencil-align-dir-y = #CENTER
+}
+
