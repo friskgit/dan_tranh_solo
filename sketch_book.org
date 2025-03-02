@@ -281,6 +281,22 @@ Naming convention: <name><section><staff>
 "introAa" means name is 'intro', section is 'A' and instrument is 'a'
 
 This score has 3 staffs: Dan Tranh RH (a), Dan Tranh LH (b), and Electronics (c)
+** main theme
+#+name: main_theme
+#+begin_src lilypond :noweb yes
+    	    r4
+  	    foca''8\12 [  coaa'''8\14 ]
+  	    gsoba''8.\13  csoca'''16\15~
+  	    csoca'''16\15 [  foca'''8.\17~ ]
+    | % 2
+    	    foca'''16\17 [ foca'''8\17  dsoba'''16\16 ~ ]
+  	    dsoba'''8\16  csoca'''8\15
+       gsoba8\13 [  dsoba'8\16 ~ ]  dsoba16\16 [  dsoba16\16 ~
+       dsoba8\16 ]
+  | % 3
+       dsoba8\16 [  gsoba,8\13 ~ ]  gsoba16\13 [  foca16\12 ~
+       foca8\12 ]  csoca'8 [  foca8\15 ] r4 }
+#+end_src
 ** right hand
 *** intro
 **** introAa
@@ -322,59 +338,78 @@ This score has 3 staffs: Dan Tranh RH (a), Dan Tranh LH (b), and Electronics (c)
       \override Staff.TimeSignature.transparent = ##f
       \revert Staff.Clef.transparent
       \time 4/4
-      g1~\2
+      <<
+    	{
+  	    r4
+  	    foca'8\12 [  coaa''8\14 ]
+  	    gsoba'8.\13  csoca''16\15~
+  	    csoca''16\15 [  foca''8.\17~ ]
   %%%%%%%%%% 6 %%%%%%%%%%%
-      |
-      g1~
+  	    |
+  	    foca''16\17 [ foca''8\17  dsoba''16\16 ~ ]
+  	    dsoba''8\16  csoca''8\15~
+  	    csoca''2
+    	}\\
+  %%%%%%%%%% 5 %%%%%%%%%%%
+    	{
+  	    \ottava #-1
+  	    g,1~\2\ff
+  %%%%%%%%%% 6 %%%%%%%%%%%
+  	    |
+  	    g,1
+  	    \ottava #0
+  	}
+  	
+      >>
   %%%%%%%%%% 7 %%%%%%%%%%%
       |
-      g1
+      \clef bass
+      g,,1
   %%%%%%%%%% 8 %%%%%%%%%%%
       |
-      eoaa1~\1
+      eoaa,,1~\1
   %%%%%%%%%% 9 %%%%%%%%%%%
       |
-      eoaa1\laissezVibrer
+      eoaa,,1\laissezVibrer
   %%%%%%%%%% 10 %%%%%%%%%%%
       |
-      g1\2\laissezVibrer
+      g,,1\2\laissezVibrer
   %%%%%%%%%% 11 %%%%%%%%%%%
       |
       <<
-   	{
-  	    eoaa1\1\laissezVibrer
+     	{
+    	    eoaa,1\1\laissezVibrer
   %%%%%%%%%% 12 %%%%%%%%%%%
-   	    |
-  	    s2
-  	    eoaa2\1\laissezVibrer
+     	    |
+    	    s2
+    	    eoaa,2\1\laissezVibrer
   %%%%%%%%%% 13 %%%%%%%%%%%
-   	    |
-   	    s1
-   	} \\
-   	{
-   	    s2
-  	    g2\2\laissezVibrer
+     	    |
+     	    s1
+     	} \\
+     	{
+     	    s2
+    	    g,,2\2\laissezVibrer
   %%%%%%%%%% 12 %%%%%%%%%%%  		
-   	    |
-  	    aoaa1\3\laissezVibrer
+     	    |
+    	    aoaa,,1\3\laissezVibrer
   %%%%%%%%%% 13 %%%%%%%%%%%
-   	    |
-  	    g1\2\laissezVibrer
-   	    |
-   	}
+     	    |
+    	    g,,1\2\laissezVibrer
+     	    |
+     	}
       >>
-      %%%%%%%%%% 14 %%%%%%%%%%%
-  	\mybracket
-      eoaa4\1^\markup{ \sans {\tiny \box {\center-column {\string-lines "Improvise with the tuning"
-  		  "of the thre bottom strings."
-  		    "Focus on the root 'C'"}}}}
+  %%%%%%%%%% 14 %%%%%%%%%%%
+      \mybracket
+      eoaa,,4\1^\markup{ \sans {\tiny \box {\center-column {\string-lines "Improvise with the tuning"
+  							"of the thre bottom strings."
+  							"Focus on the root 'C'"}}}}
       \startGroup
-      g4\2 aoaa\3 c'4\4 \stopGroup_\startTextSpan
-      s4
-      %%%%%%%%%% 15 %%%%%%%%%%%
+      g,,4\2 aoaa,,\3 c,4\4 \stopGroup_\startTextSpan
+  %%%%%%%%%% 15 %%%%%%%%%%%
       |
       s1
-      %%%%%%%%%% 16 %%%%%%%%%%%
+  %%%%%%%%%% 16 %%%%%%%%%%%
       |
       s1
   }
@@ -1013,59 +1048,89 @@ Use this replace-regexp to fix bar numbers:
 **** partBaa
 #+name: partBaa
 #+begin_src lilypond :noweb yes :tangle score/includes/dan_tranh_A.ly
-     %%%%%%%%%% electronics %%%%%%%%%%%
-     partBaa = {
-         \clef bass
+    %%%%%%%%%% electronics %%%%%%%%%%%
+    partBaa = {
+        \clef bass
 
-     %%%%%%%%%% 49 %%%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 50 %%%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 51 %%%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 52 %%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 53 %%%%%%%%%%
-         |
-         s1\mark \default
-     %%%%%%%%%% 54 %%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 55 %%%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 56 %%%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 57 %%%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 58 %%%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 59 %%%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 60 %%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 61 %%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 62 %%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 63 %%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 64 %%%%%%%%%%%
-         |
-         s1
-     }
+    %%%%%%%%%% 49 %%%%%%%%%%%
+        |
+        s1
+    %%%%%%%%%% 50 %%%%%%%%%%%
+        |
+        s1
+    %%%%%%%%%% 51 %%%%%%%%%%%
+        |
+        s1
+    %%%%%%%%%% 52 %%%%%%%%%%
+        |
+        s1
+    %%%%%%%%%% 53 %%%%%%%%%%
+        |
+        \clef treble
+        \mark \default
+        r2
+  <<
+      {
+  	foca'4\12  coaa''4\14
+    %%%%%%%%%% 54 %%%%%%%%%%
+        |
+        gsoba'4.\13  csoca''8\15~
+        csoca''8  foca''4.\17~
+    %%%%%%%%%% 55 %%%%%%%%%%%
+        |
+        foca''8 foca''4  dsoba''8\16 ~
+        dsoba''4  csoca''4\15
+    %%%%%%%%%% 56 %%%%%%%%%%%
+        |
+        gsoba''4\13
+        dsoba''4\16 ~
+        dsoba''8  dsoba''8 ~
+        dsoba''4~
+    %%%%%%%%%% 57 %%%%%%%%%%%
+        |
+        dsoba''1
+   }\\
+      {
+  	\ottava #-1
+  	eoaa,2_\1~
+    %%%%%%%%%% 54 %%%%%%%%%%
+        |
+  	eoaa,1~
+    %%%%%%%%%% 55 %%%%%%%%%%%
+        |
+  	eoaa,2 eoaa,2~
+    %%%%%%%%%% 56 %%%%%%%%%%%
+        |
+  	eoaa,4 eoaa,2 eoaa,4~
+    %%%%%%%%%% 57 %%%%%%%%%%%
+        |
+  	eoaa,1\laissezVibrer
+      }
+      
+      >>
+    %%%%%%%%%% 58 %%%%%%%%%%%
+        |
+      \ottava #0
+        s1
+    %%%%%%%%%% 59 %%%%%%%%%%%
+        |
+        s1
+    %%%%%%%%%% 60 %%%%%%%%%%
+        |
+        s1
+    %%%%%%%%%% 61 %%%%%%%%%%
+        |
+        s1
+    %%%%%%%%%% 62 %%%%%%%%%%
+        |
+        s1
+    %%%%%%%%%% 63 %%%%%%%%%%
+        |
+        s1
+    %%%%%%%%%% 64 %%%%%%%%%%%
+        |
+        c1
+    }
 #+end_src
 
 **** partBba
@@ -1133,7 +1198,7 @@ Use this replace-regexp to fix bar numbers:
 #+name: partBca
 #+begin_src lilypond :noweb yes :tangle score/includes/dan_tranh_A.ly
   %%%%%%%%%% instrument name %%%%%%%%%%%
-  PartBca = {
+  partBca = {
       \clef bass
   %%%%%%%%%% 81 %%%%%%%%%%%
       |
@@ -1252,16 +1317,23 @@ Use this replace-regexp to fix bar numbers:
 #+begin_src lilypond :noweb yes :tangle score/includes/dan_tranh_A.ly
   %%%%%%%%%% instrument name %%%%%%%%%%%
   partCaa = {
-      \clef bass
+      \clef treble
   %%%%%%%%%% 111 %%%%%%%%%%%
       |
-      s1
+      r4
+      foca''8\12 [  coaa'''8\14 ]
+      gsoba''8.\13  csoca'''16\15~
+      csoca'''16\15 [  foca'''8.\17~ ]
   %%%%%%%%%% 112 %%%%%%%%%%%
       |
-      s1
+      foca'''16\17 [ foca'''8\17  dsoba'''16\16 ~ ]
+      dsoba'''8\16  csoca'''8\15
+      gsoba8\13 [  dsoba'8\16 ~ ]  dsoba16\16 [  dsoba16\16 ~
+  					       dsoba8\16 ]
   %%%%%%%%%% 113 %%%%%%%%%%%
       |
-      s1
+      dsoba8\16 [  gsoba,8\13 ~ ]  gsoba16\13 [  foca16\12 ~
+  					       foca8\12 ]  csoca'8 [  foca8\15 ] r4 
   %%%%%%%%%% 114 %%%%%%%%%%
       |
       s1
@@ -2281,64 +2353,66 @@ Use this replace-regexp to fix bar numbers:
 **** partBab
 #+name: partBab
 #+begin_src lilypond :noweb yes :tangle score/includes/dan_tranh_B.ly
-     %%%%%%%%%% electronics %%%%%%%%%%%
-     partBab = {
-         \clef bass
+  %%%%%%%%%% electronics %%%%%%%%%%%
+  partBab = {
+      \clef bass
 
-     %%%%%%%%%% 49 %%%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 50 %%%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 51 %%%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 52 %%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 53 %%%%%%%%%%
-         |
-         s1\mark \default
-     %%%%%%%%%% 54 %%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 55 %%%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 56 %%%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 57 %%%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 58 %%%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 59 %%%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 60 %%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 61 %%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 62 %%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 63 %%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 64 %%%%%%%%%%%
-         |
-         s1
-     }
+  %%%%%%%%%% 49 %%%%%%%%%%%
+      |
+      s1
+  %%%%%%%%%% 50 %%%%%%%%%%%
+      |
+      s1
+  %%%%%%%%%% 51 %%%%%%%%%%%
+      |
+      s1
+  %%%%%%%%%% 52 %%%%%%%%%%
+      |
+      s1
+  %%%%%%%%%% 53 %%%%%%%%%%
+      |
+      s1
+  %%%%%%%%%% 54 %%%%%%%%%%
+      |
+      \mark \default
+      r2 g,,2\glissando
+  %%%%%%%%%% 55 %%%%%%%%%%%
+      |
+      s2.
+      e,,4
+  %%%%%%%%%% 56 %%%%%%%%%%%
+      |
+      s1
+  %%%%%%%%%% 57 %%%%%%%%%%%
+      |
+      s1
+  %%%%%%%%%% 58 %%%%%%%%%%%
+      |
+      s1
+  %%%%%%%%%% 59 %%%%%%%%%%%
+      |
+      s1
+  %%%%%%%%%% 60 %%%%%%%%%%
+      |
+      s1
+  %%%%%%%%%% 61 %%%%%%%%%%
+      |
+      s1
+  %%%%%%%%%% 62 %%%%%%%%%%
+      |
+      s1
+  %%%%%%%%%% 63 %%%%%%%%%%
+      |
+      s1
+  %%%%%%%%%% 64 %%%%%%%%%%%
+      |
+      s1
+  }
 #+end_src
 
 **** partBbb
 #+name: partBbb
-#+begin_src lilypond 
+#+begin_src lilypond :noweb yes :tangle score/includes/dan_tranh_B.ly
   %%%%%%%%%% instrument name %%%%%%%%%%%
   partBbb = {
       \clef bass
@@ -2401,7 +2475,7 @@ Use this replace-regexp to fix bar numbers:
 #+name: partBcb
 #+begin_src lilypond :noweb yes :tangle score/includes/dan_tranh_B.ly
   %%%%%%%%%% instrument name %%%%%%%%%%%
-  PartBcb = {
+  partBcb = {
       \clef bass
   %%%%%%%%%% 81 %%%%%%%%%%%
       |
@@ -2863,13 +2937,14 @@ Use this replace-regexp to fix bar numbers:
           |
           \stemUp
           r4 ef,,4~
-          ef,,8 d,,4.\laissezVibrer
+          ef,,8 c,,,4.\laissezVibrer
           %%%%%%%%%% 13 %%%%%%%%%%%
           |
           s1
   %%%%%%%%%% 14 %%%%%%%%%%%
           |
-          s1
+          r2
+  	r8 c,,,8 c,,,4
           %%%%%%%%%% 15 %%%%%%%%%%%
           |
           <<
@@ -2952,20 +3027,20 @@ Use this replace-regexp to fix bar numbers:
       s2._\markup {
   	\epsfile #X #28 #"/Volumes/Freedom/Dropbox/Music/pieces/dan_tranh_solo/score/includes/img/intro_cloud_4.eps"
       }
-      s1
+      s4
   %%%%%%%%%% 30 %%%%%%%%%%
       |
       s2._\markup {
   	\epsfile #X #28 #"/Volumes/Freedom/Dropbox/Music/pieces/dan_tranh_solo/score/includes/img/intro_cloud_4.eps"
       }
-      s1\!
+      s4\!
   %%%%%%%%%% 31 %%%%%%%%%%
       |
       s1\!\<
   %%%%%%%%%% 32 %%%%%%%%%%%
       |
       s2.
-      s1\!
+      s4\!
   }
 
 
@@ -3006,7 +3081,7 @@ Use this replace-regexp to fix bar numbers:
         c,,4\laissezVibrer
     %%%%%%%%%% 40 %%%%%%%%%%%
         |
-       <eoaa,, aoaa,, c,>1~
+       <eoaa,, aoaa,, c,>1
     %%%%%%%%%% 41 %%%%%%%%%%%
         |
         c,,2\laissezVibrer
@@ -3045,10 +3120,10 @@ Use this replace-regexp to fix bar numbers:
 
 *** part B
 **** partBac
-#+name: partBc
+#+name: partBac
 #+begin_src lilypond :noweb yes :tangle score/includes/electronics_C.ly
   %%%%%%%%%% electronics %%%%%%%%%%%
-  partBc = {
+  partBac = {
       \clef bass
 
   %%%%%%%%%% 49 %%%%%%%%%%%
@@ -3617,72 +3692,73 @@ Use this replace-regexp to fix bar numbers:
 #+end_src
 ** main score
 #+begin_src lilypond :file main_score.png :noweb yes 
-   %%%%%%%%%%%%%%%%% right hand %%%%%%%%%%%%%%%%%
+  %%%%%%%%%%%%%%%%% right hand %%%%%%%%%%%%%%%%%
   <<introAa>>
-      <<introBa>>
-      <<introCa>>
+    <<introBa>>
+    <<introCa>>
 
-      <<partBaa>>
-      <<partBba>>
-      <<partBca>>
-      <<partBda>>
+    <<partBaa>>
+    <<partBba>>
+    <<partBca>>
+    <<partBda>>
 
-      <<partCaa>>
-      <<partCba>>
+    <<partCaa>>
+    <<partCba>>
 
-     <<partDaa>>
-      <<partDba>>
-      <<partDca>>
+    <<partDaa>>
+    <<partDba>>
+    <<partDca>>
 
   %%%%%%%%%%%%%%%%% left hand %%%%%%%%%%%%%%%%%
 
     <<introAb>>
-      <<introBb>>
-      <<introCb>>
+    <<introBb>>
+    <<introCb>>
 
-      <<partBab>>
-      <<partBbb>>
-      <<partBcb>>
-      <<partBdb>>
+    <<partBab>>
+    <<partBbb>>
+    <<partBcb>>
+    <<partBdb>>
 
-      <<partCab>>
-      <<partCbb>>
+    <<partCab>>
+    <<partCbb>>
 
-     <<partDab>>
-      <<partDbb>>
-      <<partDcb>>
+    <<partDab>>
+    <<partDbb>>
+    <<partDcb>>
 
   %%%%%%%%%%%%%%%%% electronics %%%%%%%%%%%%%%%%%
 
     <<introAc>>
-      <<introBc>>
-      <<introCc>>
+    <<introBc>>
+    <<introCc>>
 
-      <<partBac>>
-      <<partBbc>>
-      <<partBcc>>
-      <<partBdc>>
+    <<partBac>>
+    <<partBbc>>
+    <<partBcc>>
+    <<partBdc>>
 
-      <<partCac>>
-      <<partCbc>>
+    <<partCac>>
+    <<partCbc>>
 
-     <<partDac>>
-      <<partDbc>>
-      <<partDcc>>
+    <<partDac>>
+    <<partDbc>>
+    <<partDcc>>
     
-      \score {
-          <<
+    \score {
+        <<
     	  \new StaffGroup \with { instrumentName = "Dan Tranh" } <<
     	      \new Staff  <<
     		  \set Staff.midiInstrument = "orchestral harp"
     		  \set Score.rehearsalMarkFormatter = #format-mark-box-alphabet
-    		  \fixed c {
+    		  \fixed c' {
     		      \numericTimeSignature
     				% \override Staff.TimeSignature.transparent = ##f
     		      \tempo 4 = 60
     		      \override Staff.StringNumber.font-size = -4
     		      \override Staff.StringNumber.font-name = "Helvetica"
-    		      %\introAa
+  		      \introAa
+    		      \partBaa
     		  }
     	      >>
     	      \new Staff <<
@@ -3694,8 +3770,9 @@ Use this replace-regexp to fix bar numbers:
     		      \tempo 4 = 60
     		      \set fontSize = -3
     		      \override Staff.Stem.stencil = ##f
-    		      %\introAb
-    		      %\introBb
+  		      \introAb
+    		      \partBab
+  				%\introBb
     		  }
     	      >>
     	  >>
@@ -3704,15 +3781,14 @@ Use this replace-regexp to fix bar numbers:
     	      \fixed c'' {
     		  \numericTimeSignature
     		  \override Staff.TimeSignature.transparent = ##t\tempo 4 = 60
-    		  %\introBc
+  				%\partDac
     				%\introBc
     				%\introCc
     				%\introDc
-    		  \partBdc
     	      }
     	  >>
-          >>
-          \layout {
+        >>
+        \layout {
     	  indent = 2\cm
     	  \context {
     	      \Staff
@@ -3722,15 +3798,19 @@ Use this replace-regexp to fix bar numbers:
     	      \override TimeSignature.extra-offset = #'(-1 . 5.5)
     	      \override TimeSignature.font-name = #"Helvetica"
     	      \consists "Horizontal_bracket_engraver"
-    	  }
-    	  
+  	      \remove Ottava_spanner_engraver
+  	  }
+  	  \context {
+  	      \Voice
+  	      \consists Ottava_spanner_engraver
+  	  }
     	  \context {
     	      \Score
     	      \override StaffGrouper.staff-staff-spacing.padding = #2.5
     	      \override StaffGrouper.staff-staff-spacing.basic-distance = #1
       	  }
-          }
-      }
+        }
+    }
  #+end_src
 #+RESULTS:
 [[file:main_score.png]]

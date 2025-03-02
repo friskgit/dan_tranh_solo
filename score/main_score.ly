@@ -3,8 +3,8 @@
 \include "ekme-heji.ily"
 
 %%%%%%%%% Global definitions %%%%%%%%%
-mytitle = "TitleTitle"
-mydedication = "Ngyen Thanh Thuy"
+mytitle = "Imaginary Associations"
+mydedication = "for Ngyen Thanh Thuy"
 
 %%%%%%%%% Global definitions %%%%%%%%%
 \include "includes/paper_header.ly"
@@ -59,7 +59,7 @@ mydedication = "Ngyen Thanh Thuy"
 		    \line { " " }
 		    \line {
 			\override #'(font-size . 4) 
-			\override #'(font-shape . italic) "for " \mydedication }
+			\override #'(font-shape . italic) \mydedication }
 		    \line { " " }
 		    \lower #55
 		    \line { 
@@ -119,9 +119,11 @@ mydedication = "Ngyen Thanh Thuy"
 	    \override #'(font-size . 1)
 	    \override #'(baseline-skip . 3)
 	    \line { \lower #10 \wordwrap-string ""}
-	    \line { \lower #10 \wordwrap-string "Instructions"
+	    \line { \lower #10 \wordwrap-string "The instrument should be tuned according to the following. The first 8 strings of the instrument are in a lower octave and the instrument is hence divided in two part where the upper part starts at string 9. There is a tuner that can be accessed through www.henrikfrisk.com/synths to facilitate the tuning."
 		}
 	    \lower #2
+	    \line { " " }
+	    \line { " " }
 	    \line { " " }
 
 	}
@@ -131,113 +133,45 @@ mydedication = "Ngyen Thanh Thuy"
 	\new Staff <<
 	    \omit Staff.BarLine
 	    \fixed c'' {
-		\clef treble
-		a,4^\markup \raise #2 { "1/1" }
-		bf,^"17/1"
-		b,^"9/1"
-		c^"19/1"
-		e^"3/1"
-		f^"51/1"
-		fs^"27/1"
-		g^"57/1"  }
-	>>
-	\layout {
-	    \context {
-		\Score
-		\override SpacingSpanner.common-shortest-duration =
-		#(ly:make-moment 1/32)
-	    }
-	}
-    }
-
-    \markup {
-        \column {
-	    \override #'(font-size . 1)
-				%	    \override #'(line-width . 100)
-	    \override #'(baseline-skip . 3)
-	    \line { \wordwrap-string "Additional info"
+		\accidentalStyle "dodecaphonic"
+		\clef bass
+		\fixed c {
+		    eoaa,4\1^\markup{"lower part"}
+		    g,\2
+		    aoaa,\3
+		    c\4
+		    d\5
 		}
-	}
-    }
-    
-    \score {
-	\new Staff <<
-	    \omit Staff.BarLine
-	    \fixed c' {
-		\clef treble
-		\override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/8)
-
-		s1^\markup \center-column { "ratio" "cent" }
-		csoaa4^\markup \center-column { "5/1" "-14" }
-		doba^\markup \center-column { "21/1" "-29" }
-		doca^\markup \center-column { "11/1" "-49" }
-		fsoda^\markup \center-column { "13/1" "+41" }
-		guba^\markup \center-column { "7/1" "-31" }
-		gsoaa^\markup \center-column { "15/1" "-12" }
-	    }
-	>>
-
-	\layout {
-	    \context {
-		\Score
-		\override SpacingSpanner.common-shortest-duration =
-		#(ly:make-moment 1/32)
-	    }
-	}
-    }
-    \markup {
-        \column {
-	    \override #'(font-size . 1)
-	    \override #'(baseline-skip . 3)
-	    \line {" "}
-				%	    \override #'(X-offset . 10)
-				%	    \override #'(line-width . 90)
-	    \line { \lower #1 \wordwrap-string "The resulting compound scale, which is used in two transpositions, in A (as below) or in D:"
-		}
-	}
-    }
-    
-    \score {
-	\new Staff {
-	    \new Voice {
-	        \accidentalStyle "dodecaphonic"
 		\fixed c' {
-		    \omit Staff.BarLine
-		    a,4^"0"
-		    b,^"9"
-		    bs,^"17"
-		    c^"19"
-		    csoaa^"5"
-		    doca^"11"
-		    e^"2"
-		    f^"51"
-		    fsoda^"13"
-		    fs^"27"
-		    g^"57"
-		    guba^"7"
-		    gsoaa^"15"
-		    a4^"0"
+		    dsoaa,\6
+		    fsoba,\7
+		    asoaa,\8
+		\clef treble
+		    coaa'\9^\markup{"upper part"}
+		    doaa'\10
+		}
+		\fixed c'' {
+		    eoba\11
+		    foca\12
+		    gsoba\13
+		    coaa'\14
+		    csoca'\15
+		}
+		\fixed c''' {
+		    dsoba\16
+		    foca\17
+		    goca\18
+		    boaa2\19
 		}
 	    }
-	}
+	>>
 	\layout {
+	    indent = 0.0
 	    \context {
 		\Score
 		\override SpacingSpanner.common-shortest-duration =
-		#(ly:make-moment 1/16)
+		#(ly:make-moment 1/32)
 	    }
-	}
-	\midi{}
-    }
-    \pageBreak
-    \markup {
-        \column {
-	    \override #'(font-size . 1)
-	    \override #'(baseline-skip . 3)
-	    \line {" "}
-    	    \line { \lower #18 \wordwrap-string "More instructions"
-		}
-	    \line \lower #5 {" "}
 	}
     }
 }
@@ -250,81 +184,56 @@ mydedication = "Ngyen Thanh Thuy"
     \score {
 	<<
 	    \new StaffGroup \with { instrumentName = "Dan Tranh" } <<
-  	      \new Staff  <<
-		  \set Staff.midiInstrument = "orchestral harp"
-		  \fixed c {
-		      \numericTimeSignature
+		\new Staff  <<
+		    \set Staff.midiInstrument = "orchestral harp"
+		    \fixed c {
+			\numericTimeSignature
 				% \override Staff.TimeSignature.transparent = ##f
-		      \tempo 4 = 60
-		      \override Staff.StringNumber.font-size = -4
-		      \override Staff.StringNumber.font-name = "Helvetica"
-		      \introAa
-		      \introBa
-		  }
-	      >>
-  	      \new Staff <<
-		  \set Staff.midiInstrument = "orchestral harp"
-		  \fixed c'' {
-		      \numericTimeSignature
-		      \override Staff.TimeSignature.transparent = ##t
-		      \tempo 4 = 60
-		      \set fontSize = -3
-		      \override Staff.Stem.stencil = ##f
-		      \introAb
-		      \introBb
-		  }
-	      >>
-  	  >>
-  	  \new Staff \with { instrumentName = "Electronics" } <<
-	      \fixed c'' {
-		  \numericTimeSignature
-		  \override Staff.TimeSignature.transparent = ##t\tempo 4 = 60
-		  \introAc
-		  \introBc
-		  \introCc
-		  \introDc
-	      }
-	  >>
-				% 	    \new GrandStaff \with {
-				% 		instrumentName = \markup \sans \small {"computer"}
-				% 		shortInstrumentName = \markup \sans {""}
-				% 		\override StaffGrouper.staffgroup-staff-spacing.basic-distance = #20
-				% 	    } <<
-				% 		\new Staff = "c_up" \with {
-				% 		    \override VerticalAxisGroup.default-staff-staff-spacing =
-				% 		    #'((basic-distance . 30)
-				% 		       (minimum-distance . 9)
-				% 		       (padding . 1)
-				% 		       (stretchability . 10))
-				% 		}
-				% 		\fixed c' {
-				% 		    \numericTimeSignature
-				% 		    \tempo 4 = 50 \clef treble
-				% 		    \override Staff.TimeSignature.transparent = ##t
-				% 		    \set Staff.pedalSustainStyle = #'bracket
-				% 		    \set Score.rehearsalMarkFormatter = #format-mark-circle-numbers
-				% %%%%%%%%%% top computer %%%%%%%%%%%
-	    
-				% 		    d e f g
-				% 		}
-				% 		\new Staff = "c_down"
-				% 		\fixed c {
-				% 		    \override Staff.TimeSignature.transparent = ##t
-				% 		    \set Staff.pedalSustainStyle = #'bracket
-				% 		    \clef bass
-				% %%%%%%%%%% bass computer %%%%%%%%%%%		    
-				% 		    c d e f
-				% 		}
-				% 	    >>
-				% 	    \new Staff \with {
-				% 		instrumentName = \markup \sans \small "dan tranh"
-				% 		shortInstrumentName = \markup \sans ""
-				% 		\consists "Span_arpeggio_engraver"
-				% 	    }
-				% 	    \fixed c' {
-				% 		c d e f
-				% 		}
-	    
+			\tempo 4 = 60
+			\override Staff.StringNumber.font-size = -4
+			\override Staff.StringNumber.font-name = "Helvetica"
+			c1
+%			\introAa
+%			\introBa
+%			\introCa
+%			\partBaa
+%			\partBba
+%			\partBca
+		%	\partBda
+		    }
+		>>
+		\new Staff <<
+		    \set Staff.midiInstrument = "orchestral harp"
+		    \fixed c'' {
+			\numericTimeSignature
+			\override Staff.TimeSignature.transparent = ##t
+			\tempo 4 = 60
+			\set fontSize = -3
+			\override Staff.Stem.stencil = ##f
+			c1
+%			\introAb
+%			\introBb
+%			\introCb
+%			\partBab
+%			\partBbb
+%			\partBcb
+		%	\partBdb
+		    }
+		>>
+	    >>
+	    \new Staff \with { instrumentName = "Electronics" } <<
+		\fixed c'' {
+		    \numericTimeSignature
+		    \override Staff.TimeSignature.transparent = ##t\tempo 4 = 60
+		    c1
+%		    \introAc
+%		    \introBc
+%		    \introCc
+%		    \partBac
+%		    \partBbc
+%		    \partBcc
+		}
+	    >>	    
 	>>
 	\layout {
 	    indent = 2\cm
