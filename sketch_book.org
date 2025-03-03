@@ -302,121 +302,122 @@ This score has 3 staffs: Dan Tranh RH (a), Dan Tranh LH (b), and Electronics (c)
 **** introAa
 #+name: introAa
 #+begin_src lilypond :noweb yes :tangle score/includes/dan_tranh_A.ly
-  \version "2.24"	
-  \include "ekme-heji.ily"
+    				%  \version "2.24"	
+    				%  \include "ekme-heji.ily"
 
-  \include "score/includes/functions.ly"
-  intro_rest = {
-      s1*4
-  }
+    				%  \include "score/includes/functions.ly"
 
-  pentaA = {
-      eoaa\1
-      g\2
-      aoaa\3
-      c'\4
-      d'\5
-  }
+    startPat = {
+        \improvisationOn
+        \omit Stem
+    }
 
-  pentaB = {
-      dsoaa\6
-      fsoba\7
-      asoaa\8
-      coaa'\9
-      doaa'\10
-  }
+    stopPat = {
+        \improvisationOff
+        \undo \omit Stem
+    }
 
-  %%%%%%%%%% right hand %%%%%%%%%%%
-  introAa = {
-      \override Staff.TimeSignature.transparent = ##t
-      \override Staff.Clef.transparent = ##t
-      \stopStaff
-      \intro_rest
-      \startStaff
-      \clef treble
-  %%%%%%%%%% 5 %%%%%%%%%%%
-      \override Staff.TimeSignature.transparent = ##f
-      \revert Staff.Clef.transparent
-      \time 4/4
-      <<
+    %%%%%%%%%% right hand %%%%%%%%%%%
+    introAa = {
+        \override Staff.TimeSignature.transparent = ##t
+        \override Staff.Clef.transparent = ##t
+        \stopStaff
+        s1*4
+        \startStaff
+        \clef treble
+    %%%%%%%%%% 5 %%%%%%%%%%%
+        \override Staff.TimeSignature.transparent = ##f
+        \revert Staff.Clef.transparent
+        \time 4/4
+        <<
     	{
-  	    r4
-  	    foca'8\12 [  coaa''8\14 ]
-  	    gsoba'8.\13  csoca''16\15~
-  	    csoca''16\15 [  foca''8.\17~ ]
-  %%%%%%%%%% 6 %%%%%%%%%%%
-  	    |
-  	    foca''16\17 [ foca''8\17  dsoba''16\16 ~ ]
-  	    dsoba''8\16  csoca''8\15~
-  	    csoca''2
+          	    r4
+          	    foca'8\12 [  coaa''8\14 ]
+          	    gsoba'8.\13  csoca''16\15~
+          	    csoca''16\15 [  foca''8.\17~ ]
+    %%%%%%%%%% 6 %%%%%%%%%%%
+          	    |
+          	    foca''16\17 [ foca''8\17  dsoba''16\16 ~ ]
+          	    dsoba''8\16  csoca''8\15~
+          	    csoca''2
     	}\\
-  %%%%%%%%%% 5 %%%%%%%%%%%
+    %%%%%%%%%% 5 %%%%%%%%%%%
     	{
-  	    \ottava #-1
-  	    g,1~\2\ff
-  %%%%%%%%%% 6 %%%%%%%%%%%
-  	    |
-  	    g,1
-  	    \ottava #0
-  	}
-  	
-      >>
-  %%%%%%%%%% 7 %%%%%%%%%%%
-      |
-      \clef bass
-      g,,1
-  %%%%%%%%%% 8 %%%%%%%%%%%
-      |
-      eoaa,,1~\1
-  %%%%%%%%%% 9 %%%%%%%%%%%
-      |
-      eoaa,,1\laissezVibrer
-  %%%%%%%%%% 10 %%%%%%%%%%%
-      |
-      g,,1\2\laissezVibrer
-  %%%%%%%%%% 11 %%%%%%%%%%%
-      |
-      <<
-     	{
+          	    \ottava #-1
+          	    g,1~\2\ff
+    %%%%%%%%%% 6 %%%%%%%%%%%
+          	    |
+          	    g,1
+          	    \ottava #0
+          	}
+          	
+        >>
+    %%%%%%%%%% 7 %%%%%%%%%%%
+        |
+        \clef bass
+        g,,1
+    %%%%%%%%%% 8 %%%%%%%%%%%
+        |
+        eoaa,,1~\1
+    %%%%%%%%%% 9 %%%%%%%%%%%
+        |
+        eoaa,,1\laissezVibrer
+    %%%%%%%%%% 10 %%%%%%%%%%%
+        |
+        g,,1\2\laissezVibrer
+    %%%%%%%%%% 11 %%%%%%%%%%%
+        |
+        <<
+    	{
     	    eoaa,1\1\laissezVibrer
-  %%%%%%%%%% 12 %%%%%%%%%%%
-     	    |
+    %%%%%%%%%% 12 %%%%%%%%%%%
+    	    |
     	    s2
     	    eoaa,2\1\laissezVibrer
-  %%%%%%%%%% 13 %%%%%%%%%%%
-     	    |
-     	    s1
-     	} \\
-     	{
-     	    s2
+    %%%%%%%%%% 13 %%%%%%%%%%%
+    	    |
+    	    s1
+    	} \\
+    	{
+    	    s2
     	    g,,2\2\laissezVibrer
-  %%%%%%%%%% 12 %%%%%%%%%%%  		
-     	    |
+    %%%%%%%%%% 12 %%%%%%%%%%%  		
+    	    |
     	    aoaa,,1\3\laissezVibrer
-  %%%%%%%%%% 13 %%%%%%%%%%%
-     	    |
+    %%%%%%%%%% 13 %%%%%%%%%%%
+    	    |
     	    g,,1\2\laissezVibrer
-     	    |
-     	}
-      >>
-  %%%%%%%%%% 14 %%%%%%%%%%%
-      \mybracket
-      eoaa,,4\1^\markup{ \sans {\tiny \box {\center-column {\string-lines "Improvise with the tuning"
-  							"of the thre bottom strings."
-  							"Focus on the root 'C'"}}}}
-      \startGroup
-      g,,4\2 aoaa,,\3 c,4\4 \stopGroup_\startTextSpan
-  %%%%%%%%%% 15 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 16 %%%%%%%%%%%
-      |
-      s1
-  }
+    	    |
+    	}
+        >>
+    %%%%%%%%%% 14 %%%%%%%%%%%
+        \mybracket
+        eoaa,,4\1-\markup {
+    	\with-dimensions #'(0 . 0) #'(0 . 0)
+    	\box
+    	\with-dimensions #'(-2 . 15) #'(-6 . 7)
+    	\null}
+        ^\markup{ \hspace #-3.5 " " \sans {\tiny {\center-column \translate #'(3 . 0) {\string-lines
+    										   "Improvise with the tuning"
+    									       "of the thre bottom strings."
+  										 " "}}}}
+    									     
+    							  
+        
+        g,,4\2 aoaa,,\3 c,4\4
+    %%%%%%%%%% 15 %%%%%%%%%%%
+        |
+        \startPat
+        c4_\startTextSpan c c c
+        \stopPat
+    %%%%%%%%%% 16 %%%%%%%%%%%
+        |
+        \startPat
+        c4 c c c
+        \stopPat
+    }
 #+end_src
 
-#+RESULTS: introAa
-[[file:intro.pdf]]
 
 **** introBa
 
@@ -426,43 +427,69 @@ This score has 3 staffs: Dan Tranh RH (a), Dan Tranh LH (b), and Electronics (c)
   introBa = {
   %%%%%%%%%% 16 %%%%%%%%%%%
       |
-      s1
+      \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 17 %%%%%%%%%%%
       |
-      s1
+      \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 18 %%%%%%%%%%%
       |
-      s1
+      \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 19 %%%%%%%%%%%
       |
-      s1
+      \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 20 %%%%%%%%%%
       |
-      s1_\stopTextSpan
+      \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 21 %%%%%%%%%%
       |
-      s1
+      \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 22 %%%%%%%%%%
       |
-      s1
+      \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 23 %%%%%%%%%%%
       |
-      s1
+      \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 24 %%%%%%%%%%%
       |
-      s1
+      \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 25 %%%%%%%%%%%
       |
-      s1
+      \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 26 %%%%%%%%%%%
       |
-      s1
+      \startPat
+      c4\>  c c c
+      \stopPat
   %%%%%%%%%% 27 %%%%%%%%%%%
       |
-      s1
+      \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 28 %%%%%%%%%%
       |
-      s1
+      \startPat
+      c4\pp c c c\!
+      \stopPat_\stopTextSpan
   %%%%%%%%%% 29 %%%%%%%%%%
       |
       s1
@@ -478,8 +505,6 @@ This score has 3 staffs: Dan Tranh RH (a), Dan Tranh LH (b), and Electronics (c)
   }
 #+end_src
 
-#+RESULTS: intro_A
-[[file:intro.pdf]]
 **** introCa
 #+name: introCa
 #+begin_src lilypond :noweb yes :tangle score/includes/dan_tranh_A.ly
@@ -537,513 +562,6 @@ This score has 3 staffs: Dan Tranh RH (a), Dan Tranh LH (b), and Electronics (c)
   }
 #+end_src
 
-
-***** part B
-****** partBac
-#+name: partBc
-#+begin_src lilypond :noweb yes :tangle score/includes/electronics_C.ly
-     %%%%%%%%%% electronics %%%%%%%%%%%
-     partBc = {
-         \clef bass
-
-     %%%%%%%%%% 49 %%%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 50 %%%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 51 %%%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 52 %%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 53 %%%%%%%%%%
-         |
-         s1\mark \default
-     %%%%%%%%%% 54 %%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 55 %%%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 56 %%%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 57 %%%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 58 %%%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 59 %%%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 60 %%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 61 %%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 62 %%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 63 %%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 64 %%%%%%%%%%%
-         |
-         s1
-     }
-#+end_src
-
-****** partBbc
-#+name: partBbc
-#+begin_src lilypond :noweb yes :tangle score/includes/electronics_C.ly
-  %%%%%%%%%% instrument name %%%%%%%%%%%
-  partBbc = {
-      \clef bass
-  %%%%%%%%%% 65 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 66 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 67 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 68 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 69 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 70 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 71 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 72 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 73 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 74 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 75 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 76 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 77 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 78 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 79 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 80 %%%%%%%%%%%
-      |
-      s1
-  }
-#+end_src
-
-#+RESULTS: intro_A
-[[file:intro.pdf]]
-
-****** partBcc
-Use this replace-regexp to fix bar numbers:
-nn -> \,(+ 16 \#) (for starting at bar 16)
-
-#+name: partBcc
-#+begin_src lilypond :noweb yes :tangle score/includes/dan_tranh_A.ly
-  %%%%%%%%%% instrument name %%%%%%%%%%%
-  PartBcc = {
-      \clef bass
-  %%%%%%%%%% 81 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 82 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 83 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 84 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 85 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 86 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 87 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 88 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 89 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 90 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 91 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 92 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 93 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 94 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 95 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 96 %%%%%%%%%%%
-      |
-      s1
-  }
-#+end_src
-
-****** partBdc
-Use this replace-regexp to fix bar numbers:
-3nn -> \,(+ 16 \#) (for starting at bar 16)
-
-#+name: partBdc
-#+begin_src lilypond
-  %%%%%%%%%% instrument name %%%%%%%%%%%
-  partBdc = {
-      \clef bass
-  %%%%%%%%%% 96 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 97 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 98 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 99 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 100 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 101 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 102 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 103 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 104 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 105 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 106 %%%%%%%%%%%
-      |
-
-      s1
-  %%%%%%%%%% 107 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 108 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 109 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 110 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 111 %%%%%%%%%%%
-      |
-      s1
-  }
-#+end_src
-
-***** part C
-****** partCac
-
-#+name: partCac
-#+begin_src lilypond
-  %%%%%%%%%% instrument name %%%%%%%%%%%
-  partCac = {
-      \clef bass
-  %%%%%%%%%% 111 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 112 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 113 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 114 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 115 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 116 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 117 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 118 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 119 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 120 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 121 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 122 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 123 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 124 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 125 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 126 %%%%%%%%%%%
-      |
-      s1
-  }
-#+end_src
-
-****** partCbc
-
-#+name: partCbc
-#+begin_src lilypond
-  %%%%%%%%%% instrument name %%%%%%%%%%%
-  partCbc = {
-      \clef bass
-  %%%%%%%%%% 127 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 128 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 129 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 130 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 131 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 132 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 133 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 134 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 135 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 136 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 137 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 138 %%%%%%%%%%
-      |
-      s1 \mark \default
-  %%%%%%%%%% 139 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 140 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 141 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 142 %%%%%%%%%%%
-      |
-      s1
-  }
-#+end_src
-
-***** part D
-
-****** partDac
-
-#+name: partDac
-#+begin_src lilypond
-  %%%%%%%%%% instrument name %%%%%%%%%%%
-  partDac = {
-      \clef bass
-  %%%%%%%%%% 143 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 144 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 145 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 146 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 147 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 148 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 149 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 150 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 151 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 152 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 153 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 154 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 155 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 156 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 157 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 158 %%%%%%%%%%%
-      |
-      s1
-  }
-#+end_src
-
-****** partDbc
-
-#+name: partDbc
-#+begin_src lilypond
-  %%%%%%%%%% instrument name %%%%%%%%%%%
-  partDbc = {
-      \clef bass
-  %%%%%%%%%% 159 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 160 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 161 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 162 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 163 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 164 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 165 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 166 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 167 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 168 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 169 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 170 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 171 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 172 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 173 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 174 %%%%%%%%%%%
-      |
-      s1
-  }
-#+end_src
-
-****** partDcc
-
-#+name: partDcc
-#+begin_src lilypond
-  %%%%%%%%%% instrument name %%%%%%%%%%%
-  partDcc = {
-      \clef bass
-  %%%%%%%%%% 175 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 176 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 177 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 178 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 179 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 180 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 181 %%%%%%%%%%%
-      |
-      s1
-  }
-#+end_src
-
 *** part B
 **** partBaa
 #+name: partBaa
@@ -1067,7 +585,7 @@ Use this replace-regexp to fix bar numbers:
     %%%%%%%%%% 53 %%%%%%%%%%
         |
         \clef treble
-        \mark \default
+%        \mark \default
         r2
   <<
       {
@@ -1083,7 +601,7 @@ Use this replace-regexp to fix bar numbers:
     %%%%%%%%%% 56 %%%%%%%%%%%
         |
         gsoba''4\13
-        dsoba''4\16 ~
+  	dsoba''4\16 ~
         dsoba''8  dsoba''8 ~
         dsoba''4~
     %%%%%%%%%% 57 %%%%%%%%%%%
@@ -1255,59 +773,69 @@ Use this replace-regexp to fix bar numbers:
 
 #+name: partBda
 #+begin_src lilypond :noweb yes :tangle score/includes/dan_tranh_A.ly
-  %%%%%%%%%% instrument name %%%%%%%%%%%
-  partBda = {
-      \clef bass
-  %%%%%%%%%% 96 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 97 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 98 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 99 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 100 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 101 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 102 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 103 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 104 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 105 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 106 %%%%%%%%%%%
-      |
+    %%%%%%%%%% instrument name %%%%%%%%%%%
+    partBda = {
+        \clef bass
+    %%%%%%%%%% 96 %%%%%%%%%%%
+        |
+        s1
+    %%%%%%%%%% 97 %%%%%%%%%%%
+        |
+        s1
+    %%%%%%%%%% 98 %%%%%%%%%%%
+        |
+        s1
+    %%%%%%%%%% 99 %%%%%%%%%%
+        |
+        s1
+    %%%%%%%%%% 100 %%%%%%%%%%
+        |
+        s1
+    %%%%%%%%%% 101 %%%%%%%%%%
+        |
+        s1
+    %%%%%%%%%% 102 %%%%%%%%%%%
+        |
+        s1
+    %%%%%%%%%% 103 %%%%%%%%%%%
+        |
+        s1
+    %%%%%%%%%% 104 %%%%%%%%%%%
+        |
+        s1
+    %%%%%%%%%% 105 %%%%%%%%%%%
+        |
+        s1
+    %%%%%%%%%% 106 %%%%%%%%%%%
+        |
 
-      s1
-  %%%%%%%%%% 107 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 108 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 109 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 110 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 111 %%%%%%%%%%%
-      |
-      s1
-  }
+        s1
+    %%%%%%%%%% 107 %%%%%%%%%%
+        |
+        s1
+    %%%%%%%%%% 108 %%%%%%%%%%
+        |
+  %      \mark \default
+        \clef treble
+              r4
+        foca''8\12  coaa'''8\14
+        gsoba''8.\13  csoca'''16\15~
+        csoca'''16   foca'''8.\17~ 
+    %%%%%%%%%% 109 %%%%%%%%%%
+        |
+        foca'''16  foca'''8\17  dsoba'''16 ~ 
+        dsoba'''8  csoca'''8\15
+        gsoba''8\13   dsoba'''8\16 ~   dsoba'''16 dsoba'''8.
+    %%%%%%%%%% 110 %%%%%%%%%%
+        |
+        dsoba'''8   gsoba''8\13 ~
+        gsoba''16   foca''8.\12
+        csoca'''8\15 csoca'''8~
+        csoca'''4
+    %%%%%%%%%% 111 %%%%%%%%%%%
+        |
+        s1
+    }
 #+end_src
 
 *** part C
@@ -1315,65 +843,58 @@ Use this replace-regexp to fix bar numbers:
 
 #+name: partCaa
 #+begin_src lilypond :noweb yes :tangle score/includes/dan_tranh_A.ly
-  %%%%%%%%%% instrument name %%%%%%%%%%%
-  partCaa = {
-      \clef treble
-  %%%%%%%%%% 111 %%%%%%%%%%%
-      |
-      r4
-      foca''8\12 [  coaa'''8\14 ]
-      gsoba''8.\13  csoca'''16\15~
-      csoca'''16\15 [  foca'''8.\17~ ]
-  %%%%%%%%%% 112 %%%%%%%%%%%
-      |
-      foca'''16\17 [ foca'''8\17  dsoba'''16\16 ~ ]
-      dsoba'''8\16  csoca'''8\15
-      gsoba8\13 [  dsoba'8\16 ~ ]  dsoba16\16 [  dsoba16\16 ~
-  					       dsoba8\16 ]
-  %%%%%%%%%% 113 %%%%%%%%%%%
-      |
-      dsoba8\16 [  gsoba,8\13 ~ ]  gsoba16\13 [  foca16\12 ~
-  					       foca8\12 ]  csoca'8 [  foca8\15 ] r4 
-  %%%%%%%%%% 114 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 115 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 116 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 117 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 118 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 119 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 120 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 121 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 122 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 123 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 124 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 125 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 126 %%%%%%%%%%%
-      |
-      s1
-  }
+    %%%%%%%%%% instrument name %%%%%%%%%%%
+    partCaa = {
+        \clef treble
+    %%%%%%%%%% 111 %%%%%%%%%%%
+        |
+        s1
+    %%%%%%%%%% 112 %%%%%%%%%%%
+        |
+ s1
+    %%%%%%%%%% 113 %%%%%%%%%%%
+        |
+s1
+    %%%%%%%%%% 114 %%%%%%%%%%
+        |
+        s1
+    %%%%%%%%%% 115 %%%%%%%%%%
+        |
+        s1
+    %%%%%%%%%% 116 %%%%%%%%%%
+        |
+        s1
+    %%%%%%%%%% 117 %%%%%%%%%%%
+        |
+        s1
+    %%%%%%%%%% 118 %%%%%%%%%%%
+        |
+        s1
+    %%%%%%%%%% 119 %%%%%%%%%%%
+        |
+        s1
+    %%%%%%%%%% 120 %%%%%%%%%%%
+        |
+        s1
+    %%%%%%%%%% 121 %%%%%%%%%%%
+        |
+        s1
+    %%%%%%%%%% 122 %%%%%%%%%%
+        |
+        s1
+    %%%%%%%%%% 123 %%%%%%%%%%
+        |
+        s1
+    %%%%%%%%%% 124 %%%%%%%%%%
+        |
+        s1
+    %%%%%%%%%% 125 %%%%%%%%%%
+        |
+        s1
+    %%%%%%%%%% 126 %%%%%%%%%%%
+        |
+        s1
+    }
 #+end_src
 
 **** partCba
@@ -1418,7 +939,7 @@ Use this replace-regexp to fix bar numbers:
       s1
   %%%%%%%%%% 138 %%%%%%%%%%
       |
-      s1 \mark \default
+      s1 %\mark \default
   %%%%%%%%%% 139 %%%%%%%%%%
       |
       s1
@@ -1435,7 +956,6 @@ Use this replace-regexp to fix bar numbers:
 #+end_src
 
 *** part D
-
 **** partDaa
 
 #+name: partDaa
@@ -1583,8 +1103,6 @@ Use this replace-regexp to fix bar numbers:
   }
 #+end_src
 
-*
-
 ** left hand
 *** intro
 **** intro Ab
@@ -1596,7 +1114,7 @@ Use this replace-regexp to fix bar numbers:
       \override Staff.TimeSignature.transparent = ##t
       \override Staff.Clef.transparent = ##t
       \stopStaff
-      \intro_rest
+      s1*4
       \startStaff
       \revert Staff.Clef.transparent
       \clef treble
@@ -1723,10 +1241,6 @@ Use this replace-regexp to fix bar numbers:
   }
 #+end_src
 
-
-#+RESULTS: introAb
-[[file:intro.pdf]]
-
 **** intro Bb
 
 #+name: introBb
@@ -1842,513 +1356,6 @@ Use this replace-regexp to fix bar numbers:
   }
 #+end_src
 
-
-***** part B
-****** partBac
-#+name: partBc
-#+begin_src lilypond :noweb yes :tangle score/includes/electronics_C.ly
-     %%%%%%%%%% electronics %%%%%%%%%%%
-     partBc = {
-         \clef bass
-
-     %%%%%%%%%% 49 %%%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 50 %%%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 51 %%%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 52 %%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 53 %%%%%%%%%%
-         |
-         s1\mark \default
-     %%%%%%%%%% 54 %%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 55 %%%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 56 %%%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 57 %%%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 58 %%%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 59 %%%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 60 %%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 61 %%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 62 %%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 63 %%%%%%%%%%
-         |
-         s1
-     %%%%%%%%%% 64 %%%%%%%%%%%
-         |
-         s1
-     }
-#+end_src
-
-****** partBbc
-#+name: partBbc
-#+begin_src lilypond :noweb yes :tangle score/includes/electronics_C.ly
-  %%%%%%%%%% instrument name %%%%%%%%%%%
-  partBbc = {
-      \clef bass
-  %%%%%%%%%% 65 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 66 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 67 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 68 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 69 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 70 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 71 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 72 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 73 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 74 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 75 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 76 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 77 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 78 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 79 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 80 %%%%%%%%%%%
-      |
-      s1
-  }
-#+end_src
-
-#+RESULTS: intro_A
-[[file:intro.pdf]]
-
-****** partBcc
-Use this replace-regexp to fix bar numbers:
-nn -> \,(+ 16 \#) (for starting at bar 16)
-
-#+name: partBcc
-#+begin_src lilypond :noweb yes :tangle score/includes/dan_tranh_B.ly
-  %%%%%%%%%% instrument name %%%%%%%%%%%
-  PartBcc = {
-      \clef bass
-  %%%%%%%%%% 81 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 82 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 83 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 84 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 85 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 86 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 87 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 88 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 89 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 90 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 91 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 92 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 93 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 94 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 95 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 96 %%%%%%%%%%%
-      |
-      s1
-  }
-#+end_src
-
-****** partBdc
-Use this replace-regexp to fix bar numbers:
-3nn -> \,(+ 16 \#) (for starting at bar 16)
-
-#+name: partBdc
-#+begin_src lilypond :noweb yes :tangle score/includes/dan_tranh_B.ly
-  %%%%%%%%%% instrument name %%%%%%%%%%%
-  partBdc = {
-      \clef bass
-  %%%%%%%%%% 96 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 97 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 98 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 99 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 100 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 101 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 102 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 103 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 104 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 105 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 106 %%%%%%%%%%%
-      |
-
-      s1
-  %%%%%%%%%% 107 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 108 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 109 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 110 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 111 %%%%%%%%%%%
-      |
-      s1
-  }
-#+end_src
-
-***** part C
-****** partCac
-
-#+name: partCac
-#+begin_src lilypond :noweb yes :tangle score/includes/dan_tranh_B.ly
-  %%%%%%%%%% instrument name %%%%%%%%%%%
-  partCac = {
-      \clef bass
-  %%%%%%%%%% 111 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 112 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 113 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 114 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 115 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 116 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 117 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 118 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 119 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 120 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 121 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 122 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 123 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 124 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 125 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 126 %%%%%%%%%%%
-      |
-      s1
-  }
-#+end_src
-
-****** partCbc
-
-#+name: partCbc
-#+begin_src lilypond :noweb yes :tangle score/includes/dan_tranh_B.ly
-  %%%%%%%%%% instrument name %%%%%%%%%%%
-  partCbc = {
-      \clef bass
-  %%%%%%%%%% 127 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 128 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 129 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 130 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 131 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 132 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 133 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 134 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 135 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 136 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 137 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 138 %%%%%%%%%%
-      |
-      s1 \mark \default
-  %%%%%%%%%% 139 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 140 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 141 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 142 %%%%%%%%%%%
-      |
-      s1
-  }
-#+end_src
-
-***** part D
-
-****** partDac
-
-#+name: partDac
-#+begin_src lilypond :noweb yes :tangle score/includes/dan_tranh_B.ly
-  %%%%%%%%%% instrument name %%%%%%%%%%%
-  partDac = {
-      \clef bass
-  %%%%%%%%%% 143 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 144 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 145 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 146 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 147 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 148 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 149 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 150 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 151 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 152 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 153 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 154 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 155 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 156 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 157 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 158 %%%%%%%%%%%
-      |
-      s1
-  }
-#+end_src
-
-****** partDbc
-
-#+name: partDbc
-#+begin_src lilypond :noweb yes :tangle score/includes/dan_tranh_B.ly
-  %%%%%%%%%% instrument name %%%%%%%%%%%
-  partDbc = {
-      \clef bass
-  %%%%%%%%%% 159 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 160 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 161 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 162 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 163 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 164 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 165 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 166 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 167 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 168 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 169 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 170 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 171 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 172 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 173 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 174 %%%%%%%%%%%
-      |
-      s1
-  }
-#+end_src
-
-****** partDcc
-
-#+name: partDcc
-#+begin_src lilypond :noweb yes :tangle score/includes/dan_tranh_B.ly
-  %%%%%%%%%% instrument name %%%%%%%%%%%
-  partDcc = {
-      \clef bass
-  %%%%%%%%%% 175 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 176 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 177 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 178 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 179 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 180 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 181 %%%%%%%%%%%
-      |
-      s1
-  }
-#+end_src
-
 *** part B
 **** partBab
 #+name: partBab
@@ -2374,7 +1381,7 @@ Use this replace-regexp to fix bar numbers:
       s1
   %%%%%%%%%% 54 %%%%%%%%%%
       |
-      \mark \default
+%      \mark \default
       r2 g,,2\glissando
   %%%%%%%%%% 55 %%%%%%%%%%%
       |
@@ -2688,7 +1695,7 @@ Use this replace-regexp to fix bar numbers:
       s1
   %%%%%%%%%% 138 %%%%%%%%%%
       |
-      s1 \mark \default
+      s1 %\mark \default
   %%%%%%%%%% 139 %%%%%%%%%%
       |
       s1
@@ -2705,7 +1712,6 @@ Use this replace-regexp to fix bar numbers:
 #+end_src
 
 *** part D
-
 **** partDab
 
 #+name: partDab
@@ -2865,9 +1871,10 @@ Use this replace-regexp to fix bar numbers:
           \override Staff.StaffSymbol.line-count = #1
           \override TextScript.outside-staff-priority = ##f
           \override TextScript.Y-offset = #-3
-          s1_\markup {
+          s4_\markup {
       	\epsfile #Y #6 #"/Volumes/Freedom/Dropbox/Music/pieces/dan_tranh_solo/score/includes/img/intro_cloud_2.eps"
           }
+  	s2.
           s1*3
       %%%%%%%%%% 5 %%%%%%%%%%%
           |
@@ -2979,17 +1986,18 @@ Use this replace-regexp to fix bar numbers:
       
   %%%%%%%%%% 18 %%%%%%%%%%%
       |
-      s2
+      r2
       <aoaa,, d, dsoaa,>2~
   %%%%%%%%%% 19 %%%%%%%%%%
       |
       <aoaa,, d, dsoaa,>1\laissezVibrer
   %%%%%%%%%% 20 %%%%%%%%%%
       |
-      s1
+      r2.
+      g,,,4~
   %%%%%%%%%% 21 %%%%%%%%%%
       |
-      s1
+      g,,,1\laissezVibrer
   %%%%%%%%%% 22 %%%%%%%%%%%
       |
       <eoaa,, aoaa,, c,>1\laissezVibrer
@@ -3015,51 +2023,48 @@ Use this replace-regexp to fix bar numbers:
       >>
   %%%%%%%%%% 27 %%%%%%%%%%%
       |
-      s1
-  %%%%%%%%%% 28 %%%%%%%%%%
-      |
       s2
       s2_\markup {
   	\epsfile #X #28 #"/Volumes/Freedom/Dropbox/Music/pieces/dan_tranh_solo/score/includes/img/intro_cloud_4.eps"
+  	}
+  %%%%%%%%%% 28 %%%%%%%%%%
+      |
+      r4_\markup {
+  	\epsfile #X #28 #"/Volumes/Freedom/Dropbox/Music/pieces/dan_tranh_solo/score/includes/img/intro_cloud_4.eps"
       }\>
+      c,,2.\laissezVibrer
   %%%%%%%%%% 29 %%%%%%%%%%
       |
-      s2._\markup {
-  	\epsfile #X #28 #"/Volumes/Freedom/Dropbox/Music/pieces/dan_tranh_solo/score/includes/img/intro_cloud_4.eps"
-      }
-      s4
+      s1      
   %%%%%%%%%% 30 %%%%%%%%%%
       |
-      s2._\markup {
+      r2
+      c,,4\laissezVibrer
+      s4_\markup {
   	\epsfile #X #28 #"/Volumes/Freedom/Dropbox/Music/pieces/dan_tranh_solo/score/includes/img/intro_cloud_4.eps"
       }
-      s4\!
+      \!
   %%%%%%%%%% 31 %%%%%%%%%%
       |
-      s1\!\<
+      s1
   %%%%%%%%%% 32 %%%%%%%%%%%
       |
-      s2.
-      s4\!
+      r2_\markup {
+  	\epsfile #X #28 #"/Volumes/Freedom/Dropbox/Music/pieces/dan_tranh_solo/score/includes/img/intro_cloud_4.eps"
+      }
+      \clef treble
+      < asoaa,\8 coaa\9 eoba\11>2~
   }
-
-
-
-
 #+end_src
 
-#+RESULTS: intro_A
-[[file:intro.pdf]]
 **** intro Cc
 #+name: introCc
 #+begin_src lilypond :noweb yes  :tangle score/includes/electronics_C.ly
     %%%%%%%%%% electronics %%%%%%%%%%%
     introCc = {
-        \clef bass
-
     %%%%%%%%%% 33 %%%%%%%%%%%
         |
-        s1
+        < asoaa,\8 coaa\9 eoba\11>1 \laissezVibrer
     %%%%%%%%%% 34 %%%%%%%%%%%
         |
         s1
@@ -3071,6 +2076,7 @@ Use this replace-regexp to fix bar numbers:
         s1
     %%%%%%%%%% 37 %%%%%%%%%%
         |
+        \clef bass
         r2 c,,2\laissezVibrer
     %%%%%%%%%% 38 %%%%%%%%%%
         |
@@ -3241,13 +2247,11 @@ Use this replace-regexp to fix bar numbers:
 [[file:intro.pdf]]
 
 **** partBcc
-Use this replace-regexp to fix bar numbers:
-nn -> \,(+ 16 \#) (for starting at bar 16)
 
 #+name: partBcc
 #+begin_src lilypond :noweb yes :tangle score/includes/electronics_C.ly
   %%%%%%%%%% instrument name %%%%%%%%%%%
-  PartBcc = {
+  partBcc = {
       \clef bass
   %%%%%%%%%% 81 %%%%%%%%%%%
       |
@@ -3354,7 +2358,7 @@ Use this replace-regexp to fix bar numbers:
       <eoaa,,,\1 g,,,\2 aoaa,,,\3 c,,\4 d,,\5>1\sfz\>
   %%%%%%%%%% 109 %%%%%%%%%%
       |
-      s1
+      s1\!
   %%%%%%%%%% 110 %%%%%%%%%%
       |
       s1
@@ -3482,7 +2486,6 @@ Use this replace-regexp to fix bar numbers:
 #+end_src
 
 *** part D
-
 **** partDac
 
 #+name: partDac
@@ -3692,125 +2695,126 @@ Use this replace-regexp to fix bar numbers:
 #+end_src
 ** main score
 #+begin_src lilypond :file main_score.png :noweb yes 
-  %%%%%%%%%%%%%%%%% right hand %%%%%%%%%%%%%%%%%
-  <<introAa>>
-    <<introBa>>
-    <<introCa>>
+      %%%%%%%%%%%%%%%%% right hand %%%%%%%%%%%%%%%%%
+      <<introAa>>
+        <<introBa>>
+        <<introCa>>
 
-    <<partBaa>>
-    <<partBba>>
-    <<partBca>>
-    <<partBda>>
+        <<partBaa>>
+        <<partBba>>
+        <<partBca>>
+        <<partBda>>
 
-    <<partCaa>>
-    <<partCba>>
+        <<partCaa>>
+        <<partCba>>
 
-    <<partDaa>>
-    <<partDba>>
-    <<partDca>>
+        <<partDaa>>
+        <<partDba>>
+        <<partDca>>
 
-  %%%%%%%%%%%%%%%%% left hand %%%%%%%%%%%%%%%%%
+      %%%%%%%%%%%%%%%%% left hand %%%%%%%%%%%%%%%%%
 
-    <<introAb>>
-    <<introBb>>
-    <<introCb>>
+        <<introAb>>
+        <<introBb>>
+        <<introCb>>
 
-    <<partBab>>
-    <<partBbb>>
-    <<partBcb>>
-    <<partBdb>>
+        <<partBab>>
+        <<partBbb>>
+        <<partBcb>>
+        <<partBdb>>
 
-    <<partCab>>
-    <<partCbb>>
+        <<partCab>>
+        <<partCbb>>
 
-    <<partDab>>
-    <<partDbb>>
-    <<partDcb>>
+        <<partDab>>
+        <<partDbb>>
+        <<partDcb>>
 
-  %%%%%%%%%%%%%%%%% electronics %%%%%%%%%%%%%%%%%
+      %%%%%%%%%%%%%%%%% electronics %%%%%%%%%%%%%%%%%
 
-    <<introAc>>
-    <<introBc>>
-    <<introCc>>
+        <<introAc>>
+        <<introBc>>
+        <<introCc>>
 
-    <<partBac>>
-    <<partBbc>>
-    <<partBcc>>
-    <<partBdc>>
+        <<partBac>>
+        <<partBbc>>
+        <<partBcc>>
+        <<partBdc>>
 
-    <<partCac>>
-    <<partCbc>>
+        <<partCac>>
+        <<partCbc>>
 
-    <<partDac>>
-    <<partDbc>>
-    <<partDcc>>
-    
-    \score {
-        <<
-    	  \new StaffGroup \with { instrumentName = "Dan Tranh" } <<
-    	      \new Staff  <<
-    		  \set Staff.midiInstrument = "orchestral harp"
-    		  \set Score.rehearsalMarkFormatter = #format-mark-box-alphabet
-    		  \fixed c' {
-    		      \numericTimeSignature
-    				% \override Staff.TimeSignature.transparent = ##f
-    		      \tempo 4 = 60
-    		      \override Staff.StringNumber.font-size = -4
-    		      \override Staff.StringNumber.font-name = "Helvetica"
-  		      \introAa
-    		      \partBaa
-    		  }
-    	      >>
-    	      \new Staff <<
-    		  \set Score.rehearsalMarkFormatter = #format-mark-box-alphabet
-    		  \set Staff.midiInstrument = "orchestral harp"
-    		  \fixed c'' {
-    		      \numericTimeSignature
-    		      \override Staff.TimeSignature.transparent = ##t
-    		      \tempo 4 = 60
-    		      \set fontSize = -3
-    		      \override Staff.Stem.stencil = ##f
-  		      \introAb
-    		      \partBab
-  				%\introBb
-    		  }
-    	      >>
-    	  >>
-    	  \new Staff \with { instrumentName = "Electronics" } <<
-    	      \set Score.rehearsalMarkFormatter = #format-mark-box-alphabet
-    	      \fixed c'' {
-    		  \numericTimeSignature
-    		  \override Staff.TimeSignature.transparent = ##t\tempo 4 = 60
-  				%\partDac
-    				%\introBc
-    				%\introCc
-    				%\introDc
-    	      }
-    	  >>
-        >>
-        \layout {
-    	  indent = 2\cm
-    	  \context {
-    	      \Staff
-    	      \RemoveEmptyStaves
-    	      \RemoveAllEmptyStaves
-    	      \override TimeSignature.font-size = #5.5
-    	      \override TimeSignature.extra-offset = #'(-1 . 5.5)
-    	      \override TimeSignature.font-name = #"Helvetica"
-    	      \consists "Horizontal_bracket_engraver"
-  	      \remove Ottava_spanner_engraver
-  	  }
-  	  \context {
-  	      \Voice
-  	      \consists Ottava_spanner_engraver
-  	  }
-    	  \context {
-    	      \Score
-    	      \override StaffGrouper.staff-staff-spacing.padding = #2.5
-    	      \override StaffGrouper.staff-staff-spacing.basic-distance = #1
+        <<partDac>>
+        <<partDbc>>
+        <<partDcc>>
+        
+        \score {
+            <<
+        	  \new StaffGroup \with { instrumentName = "Dan Tranh" } <<
+        	      \new Staff  <<
+        		  \set Staff.midiInstrument = "orchestral harp"
+        		  \set Score.rehearsalMarkFormatter = #format-mark-box-alphabet
+        		  \fixed c' {
+        		      \numericTimeSignature
+        				% \override Staff.TimeSignature.transparent = ##f
+        		      \tempo 4 = 60
+        		      \override Staff.StringNumber.font-size = -4
+        		      \override Staff.StringNumber.font-name = "Helvetica"
+    		      \introAa
+        		      % \partCaa
+        		  }
+        	      >>
+        	      \new Staff <<
+        		  \set Score.rehearsalMarkFormatter = #format-mark-box-alphabet
+        		  \set Staff.midiInstrument = "orchestral harp"
+        		  \fixed c'' {
+        		      \numericTimeSignature
+        		      \override Staff.TimeSignature.transparent = ##t
+        		      \tempo 4 = 60
+        		      \set fontSize = -3
+        		      \override Staff.Stem.stencil = ##f
+    		      \introAb
+  %      		      \partCab
+      				%\introBb
+        		  }
+        	      >>
+        	  >>
+        	  \new Staff \with { instrumentName = "Electronics" } <<
+        	      \set Score.rehearsalMarkFormatter = #format-mark-box-alphabet
+        	      \fixed c'' {
+        		  \numericTimeSignature
+        		  \override Staff.TimeSignature.transparent = ##t\tempo 4 = 60
+      				\introAc
+
+    %		  \partCac
+        				%\introCc
+        				%\introDc
+        	      }
+        	  >>
+            >>
+            \layout {
+        	  indent = 2\cm
+        	  \context {
+        	      \Staff
+        	      \RemoveEmptyStaves
+        	      \RemoveAllEmptyStaves
+        	      \override TimeSignature.font-size = #5.5
+        	      \override TimeSignature.extra-offset = #'(-1 . 5.5)
+        	      \override TimeSignature.font-name = #"Helvetica"
+        	      \consists "Horizontal_bracket_engraver"
+      	      \remove Ottava_spanner_engraver
       	  }
+      	  \context {
+      	      \Voice
+      	      \consists Ottava_spanner_engraver
+      	  }
+        	  \context {
+        	      \Score
+        	      \override StaffGrouper.staff-staff-spacing.padding = #2.5
+        	      \override StaffGrouper.staff-staff-spacing.basic-distance = #1
+          	  }
+            }
         }
-    }
  #+end_src
 #+RESULTS:
 [[file:main_score.png]]
