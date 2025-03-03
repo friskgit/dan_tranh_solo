@@ -202,6 +202,9 @@ mydedication = "Nguyen Thanh Thuy"
 			\partBda
 			\partCaa
 			\partCba
+			\partDaa
+			\partDba
+			\partDca
 		    }
 		>>
 		\new Staff <<
@@ -222,6 +225,9 @@ mydedication = "Nguyen Thanh Thuy"
 			\partBdb
 			\partCab
 			\partCbb
+			\partDab
+			\partDbb
+			\partDcb
 		    }
 		>>
 	    >>
@@ -239,6 +245,9 @@ mydedication = "Nguyen Thanh Thuy"
 		    \partBdc
 		    \partCac
 		    \partCbc
+		    \partDac
+		    \partDbc
+		    \partDcc
 		}
 	    >>	    
 	>>

@@ -1,226 +1,13 @@
 %%%%%%%%%% electronics %%%%%%%%%%%
-partBc = {
-    \clef bass
-
-%%%%%%%%%% 49 %%%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 50 %%%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 51 %%%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 52 %%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 53 %%%%%%%%%%
-    |
-    s1\mark \default
-%%%%%%%%%% 54 %%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 55 %%%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 56 %%%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 57 %%%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 58 %%%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 59 %%%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 60 %%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 61 %%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 62 %%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 63 %%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 64 %%%%%%%%%%%
-    |
-    s1
-}
-
-%%%%%%%%%% instrument name %%%%%%%%%%%
-partBbc = {
-    \clef bass
-%%%%%%%%%% 65 %%%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 66 %%%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 67 %%%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 68 %%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 69 %%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 70 %%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 71 %%%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 72 %%%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 73 %%%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 74 %%%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 75 %%%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 76 %%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 77 %%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 78 %%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 79 %%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 80 %%%%%%%%%%%
-    |
-    s1
-}
-
-%%%%%%%%%% electronics %%%%%%%%%%%
-partBc = {
-    \clef bass
-
-%%%%%%%%%% 49 %%%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 50 %%%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 51 %%%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 52 %%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 53 %%%%%%%%%%
-    |
-    s1\mark \default
-%%%%%%%%%% 54 %%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 55 %%%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 56 %%%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 57 %%%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 58 %%%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 59 %%%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 60 %%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 61 %%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 62 %%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 63 %%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 64 %%%%%%%%%%%
-    |
-    s1
-}
-
-%%%%%%%%%% instrument name %%%%%%%%%%%
-partBbc = {
-    \clef bass
-%%%%%%%%%% 65 %%%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 66 %%%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 67 %%%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 68 %%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 69 %%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 70 %%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 71 %%%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 72 %%%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 73 %%%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 74 %%%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 75 %%%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 76 %%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 77 %%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 78 %%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 79 %%%%%%%%%%
-    |
-    s1
-%%%%%%%%%% 80 %%%%%%%%%%%
-    |
-    s1
-}
-
-%%%%%%%%%% electronics %%%%%%%%%%%
     introAc = {
         \clef treble
         \override Staff.StaffSymbol.line-count = #1
         \override TextScript.outside-staff-priority = ##f
         \override TextScript.Y-offset = #-3
-        s1_\markup {
+        s4_\markup {
     	\epsfile #Y #6 #"/Volumes/Freedom/Dropbox/Music/pieces/dan_tranh_solo/score/includes/img/intro_cloud_2.eps"
         }
+	s2.
         s1*3
     %%%%%%%%%% 5 %%%%%%%%%%%
         |
@@ -322,17 +109,18 @@ introBc = {
     
 %%%%%%%%%% 18 %%%%%%%%%%%
     |
-    s2
+    r2
     <aoaa,, d, dsoaa,>2~
 %%%%%%%%%% 19 %%%%%%%%%%
     |
     <aoaa,, d, dsoaa,>1\laissezVibrer
 %%%%%%%%%% 20 %%%%%%%%%%
     |
-    s1
+    r2.
+    g,,,4~
 %%%%%%%%%% 21 %%%%%%%%%%
     |
-    s1
+    g,,,1\laissezVibrer
 %%%%%%%%%% 22 %%%%%%%%%%%
     |
     <eoaa,, aoaa,, c,>1\laissezVibrer
@@ -358,41 +146,44 @@ introBc = {
     >>
 %%%%%%%%%% 27 %%%%%%%%%%%
     |
-    s1
-%%%%%%%%%% 28 %%%%%%%%%%
-    |
     s2
     s2_\markup {
 	\epsfile #X #28 #"/Volumes/Freedom/Dropbox/Music/pieces/dan_tranh_solo/score/includes/img/intro_cloud_4.eps"
+	}
+%%%%%%%%%% 28 %%%%%%%%%%
+    |
+    r4_\markup {
+	\epsfile #X #28 #"/Volumes/Freedom/Dropbox/Music/pieces/dan_tranh_solo/score/includes/img/intro_cloud_4.eps"
     }\>
+    c,,2.\laissezVibrer
 %%%%%%%%%% 29 %%%%%%%%%%
     |
-    s2._\markup {
-	\epsfile #X #28 #"/Volumes/Freedom/Dropbox/Music/pieces/dan_tranh_solo/score/includes/img/intro_cloud_4.eps"
-    }
-    s4
+    s1      
 %%%%%%%%%% 30 %%%%%%%%%%
     |
-    s2._\markup {
+    r2
+    c,,4\laissezVibrer
+    s4_\markup {
 	\epsfile #X #28 #"/Volumes/Freedom/Dropbox/Music/pieces/dan_tranh_solo/score/includes/img/intro_cloud_4.eps"
     }
-    s4\!
+    \!
 %%%%%%%%%% 31 %%%%%%%%%%
     |
-    s1\!\<
+    s1
 %%%%%%%%%% 32 %%%%%%%%%%%
     |
-    s2.
-    s4\!
+    r2_\markup {
+	\epsfile #X #28 #"/Volumes/Freedom/Dropbox/Music/pieces/dan_tranh_solo/score/includes/img/intro_cloud_4.eps"
+    }
+    \clef treble
+    < asoaa,\8 coaa\9 eoba\11>2~
 }
 
 %%%%%%%%%% electronics %%%%%%%%%%%
   introCc = {
-      \clef bass
-
   %%%%%%%%%% 33 %%%%%%%%%%%
       |
-      s1
+      < asoaa,\8 coaa\9 eoba\11>1 \laissezVibrer
   %%%%%%%%%% 34 %%%%%%%%%%%
       |
       s1
@@ -404,6 +195,7 @@ introBc = {
       s1
   %%%%%%%%%% 37 %%%%%%%%%%
       |
+      \clef bass
       r2 c,,2\laissezVibrer
   %%%%%%%%%% 38 %%%%%%%%%%
       |
@@ -462,12 +254,12 @@ partBac = {
     s1
 %%%%%%%%%% 52 %%%%%%%%%%
     |
-    c,,,1^\markup {
-    	      \epsfile #X #28 #"/Volumes/Freedom/Dropbox/Music/pieces/dan_tranh_solo/score/includes/img/gran_noise_1.eps"
-    	  }
+    s1
 %%%%%%%%%% 53 %%%%%%%%%%
     |
-    s1\mark \default
+    c,,,1^\markup {
+	\epsfile #X #28 #"/Volumes/Freedom/Dropbox/Music/pieces/dan_tranh_solo/score/includes/img/gran_noise_1.eps"
+    }
 %%%%%%%%%% 54 %%%%%%%%%%
     |
     s1
@@ -557,7 +349,7 @@ partBbc = {
 }
 
 %%%%%%%%%% instrument name %%%%%%%%%%%
-PartBcc = {
+partBcc = {
     \clef bass
 %%%%%%%%%% 81 %%%%%%%%%%%
     |
@@ -653,11 +445,10 @@ partBdc = {
     <eoaa,,,\1 g,,,\2 aoaa,,,\3 c,,\4 d,,\5>1~\pppp\<
 %%%%%%%%%% 108 %%%%%%%%%%
     |
-    \mark \default
     <eoaa,,,\1 g,,,\2 aoaa,,,\3 c,,\4 d,,\5>1\sfz\>
 %%%%%%%%%% 109 %%%%%%%%%%
     |
-    s1
+    s1\!
 %%%%%%%%%% 110 %%%%%%%%%%
     |
     s1
@@ -757,7 +548,7 @@ partCbc = {
     s1
 %%%%%%%%%% 138 %%%%%%%%%%
     |
-    s1 \mark \default
+    s1 
 %%%%%%%%%% 139 %%%%%%%%%%
     |
     s1

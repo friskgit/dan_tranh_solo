@@ -284,138 +284,162 @@ This score has 3 staffs: Dan Tranh RH (a), Dan Tranh LH (b), and Electronics (c)
 ** main theme
 #+name: main_theme
 #+begin_src lilypond :noweb yes
-    	    r4
-  	    foca''8\12 [  coaa'''8\14 ]
-  	    gsoba''8.\13  csoca'''16\15~
-  	    csoca'''16\15 [  foca'''8.\17~ ]
-    | % 2
-    	    foca'''16\17 [ foca'''8\17  dsoba'''16\16 ~ ]
-  	    dsoba'''8\16  csoca'''8\15
-       gsoba8\13 [  dsoba'8\16 ~ ]  dsoba16\16 [  dsoba16\16 ~
-       dsoba8\16 ]
+  r4
+  foca''8\12   coaa'''8\14 
+  gsoba''8.\13  csoca'''16\15~
+  csoca'''16   foca'''8.\17~ 
+  | % 2
+  foca'''16\17  foca'''8  dsoba'''16\16 ~ 
+  dsoba'''8  csoca'''8\15
+  gsoba8\13   dsoba'8\16 ~
+  dsoba16 dsoba8.
   | % 3
-       dsoba8\16 [  gsoba,8\13 ~ ]  gsoba16\13 [  foca16\12 ~
-       foca8\12 ]  csoca'8 [  foca8\15 ] r4 }
+  dsoba8\16   gsoba,8\13 ~   gsoba16   foca16\12 ~
+  foca8  csoca'8\15   foca8\12  r4 }
+#+end_src
+#+begin_src lilypond :noweb yes
+  r2.
+  foca''8.\12   coaa'''16\14 ~
+  |
+  coaa'''8. gsoba''16\13~
+  gsoba''8.  csoca'''16\15~
+  csoca'''8.   foca'''16\17~
+  foca'''8 dsoba'''8\16 ~
+  | % 2
+  csoca'''8.\15 gsoba16\13~
+  gsoba8.  dsoba'16\16 ~
+  dsoba16 dsoba8.
+  gsoba,8\13 gsoba8~ 
+  | % 3
+  gsoba16 foca8.\12 ~
+  foca16  csoca'8.\15
+  foca2\12  
 #+end_src
 ** right hand
 *** intro
 **** introAa
 #+name: introAa
 #+begin_src lilypond :noweb yes :tangle score/includes/dan_tranh_A.ly
-    				%  \version "2.24"	
-    				%  \include "ekme-heji.ily"
+  				%  \version "2.24"	
+  				%  \include "ekme-heji.ily"
 
-    				%  \include "score/includes/functions.ly"
+  				%  \include "score/includes/functions.ly"
 
-    startPat = {
-        \improvisationOn
-        \omit Stem
-    }
+  startPat = {
+      \improvisationOn
+      \omit Stem
+  }
 
-    stopPat = {
-        \improvisationOff
-        \undo \omit Stem
-    }
+  stopPat = {
+      \improvisationOff
+      \undo \omit Stem
+  }
 
-    %%%%%%%%%% right hand %%%%%%%%%%%
-    introAa = {
-        \override Staff.TimeSignature.transparent = ##t
-        \override Staff.Clef.transparent = ##t
-        \stopStaff
-        s1*4
-        \startStaff
-        \clef treble
-    %%%%%%%%%% 5 %%%%%%%%%%%
-        \override Staff.TimeSignature.transparent = ##f
-        \revert Staff.Clef.transparent
-        \time 4/4
-        <<
-    	{
-          	    r4
-          	    foca'8\12 [  coaa''8\14 ]
-          	    gsoba'8.\13  csoca''16\15~
-          	    csoca''16\15 [  foca''8.\17~ ]
-    %%%%%%%%%% 6 %%%%%%%%%%%
-          	    |
-          	    foca''16\17 [ foca''8\17  dsoba''16\16 ~ ]
-          	    dsoba''8\16  csoca''8\15~
-          	    csoca''2
-    	}\\
-    %%%%%%%%%% 5 %%%%%%%%%%%
-    	{
-          	    \ottava #-1
-          	    g,1~\2\ff
-    %%%%%%%%%% 6 %%%%%%%%%%%
-          	    |
-          	    g,1
-          	    \ottava #0
-          	}
-          	
-        >>
-    %%%%%%%%%% 7 %%%%%%%%%%%
-        |
-        \clef bass
-        g,,1
-    %%%%%%%%%% 8 %%%%%%%%%%%
-        |
-        eoaa,,1~\1
-    %%%%%%%%%% 9 %%%%%%%%%%%
-        |
-        eoaa,,1\laissezVibrer
-    %%%%%%%%%% 10 %%%%%%%%%%%
-        |
-        g,,1\2\laissezVibrer
-    %%%%%%%%%% 11 %%%%%%%%%%%
-        |
-        <<
-    	{
-    	    eoaa,1\1\laissezVibrer
-    %%%%%%%%%% 12 %%%%%%%%%%%
-    	    |
-    	    s2
-    	    eoaa,2\1\laissezVibrer
-    %%%%%%%%%% 13 %%%%%%%%%%%
-    	    |
-    	    s1
-    	} \\
-    	{
-    	    s2
-    	    g,,2\2\laissezVibrer
-    %%%%%%%%%% 12 %%%%%%%%%%%  		
-    	    |
-    	    aoaa,,1\3\laissezVibrer
-    %%%%%%%%%% 13 %%%%%%%%%%%
-    	    |
-    	    g,,1\2\laissezVibrer
-    	    |
-    	}
-        >>
-    %%%%%%%%%% 14 %%%%%%%%%%%
-        \mybracket
-        eoaa,,4\1-\markup {
-    	\with-dimensions #'(0 . 0) #'(0 . 0)
-    	\box
-    	\with-dimensions #'(-2 . 15) #'(-6 . 7)
-    	\null}
-        ^\markup{ \hspace #-3.5 " " \sans {\tiny {\center-column \translate #'(3 . 0) {\string-lines
-    										   "Improvise with the tuning"
-    									       "of the thre bottom strings."
+  %%%%%%%%%% right hand %%%%%%%%%%%
+  introAa = {
+      \override Staff.TimeSignature.transparent = ##t
+      \override Staff.Clef.transparent = ##t
+      \stopStaff
+      s1*4
+      \startStaff
+      \clef treble
+  %%%%%%%%%% 5 %%%%%%%%%%%
+      \override Staff.TimeSignature.transparent = ##f
+      \revert Staff.Clef.transparent
+      \mark \markup {
+  	\column {
+  	    \line {\raise #4 \sans \fontsize #9 \box \bold "A" }
+  	    \line {" "}
+  	}
+      }
+      \time 4/4
+      <<
+  	{
+        	    r4
+        	    foca'8\12 [  coaa''8\14 ]
+        	    gsoba'8.\13  csoca''16\15~
+        	    csoca''16\15 [  foca''8.\17~ ]
+  %%%%%%%%%% 6 %%%%%%%%%%%
+        	    |
+        	    foca''16\17 [ foca''8\17  dsoba''16\16 ~ ]
+        	    dsoba''8\16  csoca''8\15~
+        	    csoca''2
+  	}\\
+  %%%%%%%%%% 5 %%%%%%%%%%%
+  	{
+        	    \ottava #-1
+        	    g,1~\2\ff
+  %%%%%%%%%% 6 %%%%%%%%%%%
+        	    |
+        	    g,1
+        	    \ottava #0
+        	}
+        	
+      >>
+  %%%%%%%%%% 7 %%%%%%%%%%%
+      |
+      \clef bass
+      g,,1
+  %%%%%%%%%% 8 %%%%%%%%%%%
+      |
+      eoaa,,1~\1
+  %%%%%%%%%% 9 %%%%%%%%%%%
+      |
+      eoaa,,1\laissezVibrer
+  %%%%%%%%%% 10 %%%%%%%%%%%
+      |
+      g,,1\2\laissezVibrer
+  %%%%%%%%%% 11 %%%%%%%%%%%
+      |
+      <<
+  	{
+  	    eoaa,1\1\laissezVibrer
+  %%%%%%%%%% 12 %%%%%%%%%%%
+  	    |
+  	    s2
+  	    eoaa,2\1\laissezVibrer
+  %%%%%%%%%% 13 %%%%%%%%%%%
+  	    |
+  	    s1
+  	} \\
+  	{
+  	    s2
+  	    g,,2\2\laissezVibrer
+  %%%%%%%%%% 12 %%%%%%%%%%%  		
+  	    |
+  	    aoaa,,1\3\laissezVibrer
+  %%%%%%%%%% 13 %%%%%%%%%%%
+  	    |
+  	    g,,1\2\laissezVibrer
+  	    |
+  	}
+      >>
+  %%%%%%%%%% 14 %%%%%%%%%%%
+      \mybracket
+      eoaa,,4\1-\markup {
+  	\with-dimensions #'(0 . 0) #'(0 . 0)
+  	\box
+  	\with-dimensions #'(-2 . 15) #'(-6 . 7)
+  	\null}
+      ^\markup{ \hspace #-3.5 " " \sans {\tiny {\center-column \translate #'(3 . 0) {\string-lines
+  										   "Improvise with the tuning"
+  									       "of the thre bottom strings."
   										 " "}}}}
-    									     
-    							  
-        
-        g,,4\2 aoaa,,\3 c,4\4
-    %%%%%%%%%% 15 %%%%%%%%%%%
-        |
-        \startPat
-        c4_\startTextSpan c c c
-        \stopPat
-    %%%%%%%%%% 16 %%%%%%%%%%%
-        |
-        \startPat
-        c4 c c c
-        \stopPat
-    }
+  									     
+  							  
+      
+      g,,4\2 aoaa,,\3 c,4\4
+  %%%%%%%%%% 15 %%%%%%%%%%%
+      |
+      \startPat
+      c4_\startTextSpan c c c
+      \stopPat
+  %%%%%%%%%% 16 %%%%%%%%%%%
+      |
+      \startPat
+      c4 c c c
+      \stopPat
+  }
 #+end_src
 
 
@@ -425,11 +449,6 @@ This score has 3 staffs: Dan Tranh RH (a), Dan Tranh LH (b), and Electronics (c)
 #+begin_src lilypond :noweb yes :tangle score/includes/dan_tranh_A.ly
   %%%%%%%%%% instrument name %%%%%%%%%%%
   introBa = {
-  %%%%%%%%%% 16 %%%%%%%%%%%
-      |
-      \startPat
-      c4 c c c
-      \stopPat
   %%%%%%%%%% 17 %%%%%%%%%%%
       |
       \startPat
@@ -513,52 +532,84 @@ This score has 3 staffs: Dan Tranh RH (a), Dan Tranh LH (b), and Electronics (c)
       \clef bass
   %%%%%%%%%% 33 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 34 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 35 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 36 %%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 37 %%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 38 %%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 39 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 40 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 41 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 42 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 43 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 44 %%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 45 %%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 46 %%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 47 %%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 48 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   }
 #+end_src
 
@@ -566,89 +617,115 @@ This score has 3 staffs: Dan Tranh RH (a), Dan Tranh LH (b), and Electronics (c)
 **** partBaa
 #+name: partBaa
 #+begin_src lilypond :noweb yes :tangle score/includes/dan_tranh_A.ly
-    %%%%%%%%%% electronics %%%%%%%%%%%
-    partBaa = {
-        \clef bass
+      %%%%%%%%%% electronics %%%%%%%%%%%
+      partBaa = {
+          \clef bass
 
-    %%%%%%%%%% 49 %%%%%%%%%%%
-        |
-        s1
-    %%%%%%%%%% 50 %%%%%%%%%%%
-        |
-        s1
-    %%%%%%%%%% 51 %%%%%%%%%%%
-        |
-        s1
-    %%%%%%%%%% 52 %%%%%%%%%%
-        |
-        s1
-    %%%%%%%%%% 53 %%%%%%%%%%
-        |
-        \clef treble
-%        \mark \default
-        r2
-  <<
-      {
-  	foca'4\12  coaa''4\14
-    %%%%%%%%%% 54 %%%%%%%%%%
-        |
-        gsoba'4.\13  csoca''8\15~
-        csoca''8  foca''4.\17~
-    %%%%%%%%%% 55 %%%%%%%%%%%
-        |
-        foca''8 foca''4  dsoba''8\16 ~
-        dsoba''4  csoca''4\15
-    %%%%%%%%%% 56 %%%%%%%%%%%
-        |
-        gsoba''4\13
-  	dsoba''4\16 ~
-        dsoba''8  dsoba''8 ~
-        dsoba''4~
-    %%%%%%%%%% 57 %%%%%%%%%%%
-        |
-        dsoba''1
-   }\\
-      {
-  	\ottava #-1
-  	eoaa,2_\1~
-    %%%%%%%%%% 54 %%%%%%%%%%
-        |
-  	eoaa,1~
-    %%%%%%%%%% 55 %%%%%%%%%%%
-        |
-  	eoaa,2 eoaa,2~
-    %%%%%%%%%% 56 %%%%%%%%%%%
-        |
-  	eoaa,4 eoaa,2 eoaa,4~
-    %%%%%%%%%% 57 %%%%%%%%%%%
-        |
-  	eoaa,1\laissezVibrer
+      %%%%%%%%%% 49 %%%%%%%%%%%
+          |
+               \startPat
+      c4 c c c
+      \stopPat
+      %%%%%%%%%% 50 %%%%%%%%%%%
+          |
+               \startPat
+      c4 c c c
+      \stopPat
+      %%%%%%%%%% 51 %%%%%%%%%%%
+          |
+               \startPat
+      c4 c c c
+      \stopPat
+      %%%%%%%%%% 52 %%%%%%%%%%
+          |
+               \startPat
+      c4 c c c
+      \stopPat
+      %%%%%%%%%% 53 %%%%%%%%%%
+  	\bar "||"       
+          \clef treble
+    	     \mark \markup {
+    	\column {
+    	    \line {\raise #4 \sans \fontsize #9 \box \bold "B" }
+    	    \line {" "}
+    	}
       }
-      
-      >>
-    %%%%%%%%%% 58 %%%%%%%%%%%
-        |
-      \ottava #0
-        s1
-    %%%%%%%%%% 59 %%%%%%%%%%%
-        |
-        s1
-    %%%%%%%%%% 60 %%%%%%%%%%
-        |
-        s1
-    %%%%%%%%%% 61 %%%%%%%%%%
-        |
-        s1
-    %%%%%%%%%% 62 %%%%%%%%%%
-        |
-        s1
-    %%%%%%%%%% 63 %%%%%%%%%%
-        |
-        s1
-    %%%%%%%%%% 64 %%%%%%%%%%%
-        |
-        c1
-    }
+          r2
+    <<
+        {
+    	foca'4\12  coaa''4\14
+      %%%%%%%%%% 54 %%%%%%%%%%
+          |
+          gsoba'4.\13  csoca''8\15~
+          csoca''8  foca''4.\17~
+      %%%%%%%%%% 55 %%%%%%%%%%%
+          |
+          foca''8 foca''4  dsoba''8\16 ~
+          dsoba''4  csoca''4\15
+      %%%%%%%%%% 56 %%%%%%%%%%%
+          |
+          gsoba'4\13
+    	dsoba''4\16 ~
+          dsoba''8  dsoba''8 ~
+          dsoba''4~
+      %%%%%%%%%% 57 %%%%%%%%%%%
+          |
+          dsoba''1
+     }\\
+        {
+    	\ottava #-1
+    	eoaa,2_\1~
+      %%%%%%%%%% 54 %%%%%%%%%%
+          |
+    	eoaa,1~
+      %%%%%%%%%% 55 %%%%%%%%%%%
+          |
+    	eoaa,2 eoaa,2~
+      %%%%%%%%%% 56 %%%%%%%%%%%
+          |
+    	eoaa,4 eoaa,2 eoaa,4~
+      %%%%%%%%%% 57 %%%%%%%%%%%
+          |
+    	eoaa,1\laissezVibrer
+        }
+        
+        >>
+      %%%%%%%%%% 58 %%%%%%%%%%%
+          |
+        \ottava #0
+        \clef bass
+        \startPat
+      c4 c c c
+      \stopPat
+      %%%%%%%%%% 59 %%%%%%%%%%%
+          |
+               \startPat
+      c4 c c c
+      \stopPat
+      %%%%%%%%%% 60 %%%%%%%%%%
+          |
+               \startPat
+      c4 c c c
+      \stopPat
+      %%%%%%%%%% 61 %%%%%%%%%%
+          |
+               \startPat
+      c4 c c c
+      \stopPat
+      %%%%%%%%%% 62 %%%%%%%%%%
+          |
+               \startPat
+      c4 c c c
+      \stopPat
+      %%%%%%%%%% 63 %%%%%%%%%%
+          |
+               \startPat
+      c4 c c c
+      \stopPat
+      %%%%%%%%%% 64 %%%%%%%%%%%
+          |
+          c1
+      }
 #+end_src
 
 **** partBba
@@ -659,52 +736,74 @@ This score has 3 staffs: Dan Tranh RH (a), Dan Tranh LH (b), and Electronics (c)
       \clef bass
   %%%%%%%%%% 65 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 66 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 67 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 68 %%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 69 %%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 70 %%%%%%%%%%
       |
-      s1
+      \clef treble
+      goca'''1:32\18~\ppp\<
   %%%%%%%%%% 71 %%%%%%%%%%%
       |
-      s1
+      goca'''1:32~
   %%%%%%%%%% 72 %%%%%%%%%%%
       |
-      s1
+      goca'''1:32~
   %%%%%%%%%% 73 %%%%%%%%%%%
       |
-      s1
+      goca'''1:32~\!\f\>
   %%%%%%%%%% 74 %%%%%%%%%%%
       |
-      s1
+      goca'''1:32~
   %%%%%%%%%% 75 %%%%%%%%%%%
       |
-      s1
+      goca'''1:32~\!\mf
   %%%%%%%%%% 76 %%%%%%%%%%
       |
-      s1
+      \clef bass
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 77 %%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 78 %%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 79 %%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 80 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   }
 #+end_src
 
@@ -720,52 +819,84 @@ This score has 3 staffs: Dan Tranh RH (a), Dan Tranh LH (b), and Electronics (c)
       \clef bass
   %%%%%%%%%% 81 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 82 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 83 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 84 %%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 85 %%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 86 %%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 87 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 88 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 89 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 90 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 91 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 92 %%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 93 %%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 94 %%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 95 %%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 96 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   }
 #+end_src
 
@@ -773,69 +904,96 @@ This score has 3 staffs: Dan Tranh RH (a), Dan Tranh LH (b), and Electronics (c)
 
 #+name: partBda
 #+begin_src lilypond :noweb yes :tangle score/includes/dan_tranh_A.ly
-    %%%%%%%%%% instrument name %%%%%%%%%%%
-    partBda = {
-        \clef bass
-    %%%%%%%%%% 96 %%%%%%%%%%%
-        |
-        s1
-    %%%%%%%%%% 97 %%%%%%%%%%%
-        |
-        s1
-    %%%%%%%%%% 98 %%%%%%%%%%%
-        |
-        s1
-    %%%%%%%%%% 99 %%%%%%%%%%
-        |
-        s1
-    %%%%%%%%%% 100 %%%%%%%%%%
-        |
-        s1
-    %%%%%%%%%% 101 %%%%%%%%%%
-        |
-        s1
-    %%%%%%%%%% 102 %%%%%%%%%%%
-        |
-        s1
-    %%%%%%%%%% 103 %%%%%%%%%%%
-        |
-        s1
-    %%%%%%%%%% 104 %%%%%%%%%%%
-        |
-        s1
-    %%%%%%%%%% 105 %%%%%%%%%%%
-        |
-        s1
-    %%%%%%%%%% 106 %%%%%%%%%%%
-        |
+  %%%%%%%%%% instrument name %%%%%%%%%%%
+  partBda = {
+      \clef bass
+  %%%%%%%%%% 97 %%%%%%%%%%%
+      |
+           \startPat
+    c4 c c c
+    \stopPat
+  %%%%%%%%%% 98 %%%%%%%%%%%
+      |
+           \startPat
+    c4 c c c
+    \stopPat
+  %%%%%%%%%% 99 %%%%%%%%%%
+      |
+           \startPat
+    c4 c c c
+    \stopPat
+  %%%%%%%%%% 100 %%%%%%%%%%
+      |
+           \startPat
+    c4 c c c
+    \stopPat
+  %%%%%%%%%% 101 %%%%%%%%%%
+      |
+           \startPat
+    c4 c c c
+    \stopPat
+  %%%%%%%%%% 102 %%%%%%%%%%%
+      |
+           \startPat
+    c4 c c c
+    \stopPat
+  %%%%%%%%%% 103 %%%%%%%%%%%
+      |
+           \startPat
+    c4 c c c
+    \stopPat
+  %%%%%%%%%% 104 %%%%%%%%%%%
+      |
+           \startPat
+    c4 c c c
+    \stopPat
+  %%%%%%%%%% 105 %%%%%%%%%%%
+      |
+           \startPat
+    c4 c c c
+    \stopPat
+  %%%%%%%%%% 106 %%%%%%%%%%%
+      |
 
-        s1
-    %%%%%%%%%% 107 %%%%%%%%%%
-        |
-        s1
-    %%%%%%%%%% 108 %%%%%%%%%%
-        |
-  %      \mark \default
-        \clef treble
-              r4
-        foca''8\12  coaa'''8\14
-        gsoba''8.\13  csoca'''16\15~
-        csoca'''16   foca'''8.\17~ 
-    %%%%%%%%%% 109 %%%%%%%%%%
-        |
-        foca'''16  foca'''8\17  dsoba'''16 ~ 
-        dsoba'''8  csoca'''8\15
-        gsoba''8\13   dsoba'''8\16 ~   dsoba'''16 dsoba'''8.
-    %%%%%%%%%% 110 %%%%%%%%%%
-        |
-        dsoba'''8   gsoba''8\13 ~
-        gsoba''16   foca''8.\12
-        csoca'''8\15 csoca'''8~
-        csoca'''4
-    %%%%%%%%%% 111 %%%%%%%%%%%
-        |
-        s1
+           \startPat
+    c4 c c c
+    \stopPat
+  %%%%%%%%%% 107 %%%%%%%%%%
+      |
+           \startPat
+    c4 c c c
+    \stopPat
+  %%%%%%%%%% 108 %%%%%%%%%%
+      \bar "||"
+   \mark \markup {
+  	\column {
+  	    \line {\raise #4 \sans \fontsize #9 \box \bold "C" }
+  	    \line {" "}
+  	}
     }
+      \clef treble
+            r4
+      foca''8\12  coaa'''8\14
+      gsoba''8.\13  csoca'''16\15~
+      csoca'''16   foca'''8.\17~ 
+  %%%%%%%%%% 109 %%%%%%%%%%
+      |
+      foca'''16  foca'''8\17  dsoba'''16 ~ 
+      dsoba'''8  csoca'''8\15
+      gsoba''8\13   dsoba'''8\16 ~   dsoba'''16 dsoba'''8.
+  %%%%%%%%%% 110 %%%%%%%%%%
+      |
+      dsoba'''8   gsoba''8\13 ~
+      gsoba''16   foca''8.\12
+      csoca'''8\15 csoca'''8~
+      csoca'''4
+  %%%%%%%%%% 111 %%%%%%%%%%%
+      |
+      \clef bass
+      \startPat
+    c4 c c c
+    \stopPat
+  }
 #+end_src
 
 *** part C
@@ -845,55 +1003,82 @@ This score has 3 staffs: Dan Tranh RH (a), Dan Tranh LH (b), and Electronics (c)
 #+begin_src lilypond :noweb yes :tangle score/includes/dan_tranh_A.ly
     %%%%%%%%%% instrument name %%%%%%%%%%%
     partCaa = {
-        \clef treble
-    %%%%%%%%%% 111 %%%%%%%%%%%
-        |
-        s1
+        \clef bass
     %%%%%%%%%% 112 %%%%%%%%%%%
         |
- s1
+      \startPat
+      c4 c c c
+      \stopPat
     %%%%%%%%%% 113 %%%%%%%%%%%
         |
-s1
+     \startPat
+      c4 c c c
+      \stopPat
     %%%%%%%%%% 114 %%%%%%%%%%
         |
-        s1
+             \startPat
+      c4 c c c
+      \stopPat
     %%%%%%%%%% 115 %%%%%%%%%%
         |
-        s1
+             \startPat
+      c4 c c c
+      \stopPat
     %%%%%%%%%% 116 %%%%%%%%%%
         |
-        s1
+             \startPat
+      c4 c c c
+      \stopPat
     %%%%%%%%%% 117 %%%%%%%%%%%
         |
-        s1
+             \startPat
+      c4 c c c
+      \stopPat
     %%%%%%%%%% 118 %%%%%%%%%%%
         |
-        s1
+             \startPat
+      c4 c c c
+      \stopPat
     %%%%%%%%%% 119 %%%%%%%%%%%
         |
-        s1
+             \startPat
+      c4 c c c
+      \stopPat
     %%%%%%%%%% 120 %%%%%%%%%%%
         |
-        s1
+             \startPat
+      c4 c c c
+      \stopPat
     %%%%%%%%%% 121 %%%%%%%%%%%
         |
-        s1
+             \startPat
+      c4 c c c
+      \stopPat
     %%%%%%%%%% 122 %%%%%%%%%%
         |
-        s1
+             \startPat
+      c4 c c c
+      \stopPat
     %%%%%%%%%% 123 %%%%%%%%%%
         |
-        s1
+             \startPat
+      c4 c c c
+      \stopPat
     %%%%%%%%%% 124 %%%%%%%%%%
         |
-        s1
+             \startPat
+      c4 c c c
+      \stopPat
     %%%%%%%%%% 125 %%%%%%%%%%
         |
-        s1
+             \startPat
+      c4 c c c
+      \stopPat
     %%%%%%%%%% 126 %%%%%%%%%%%
         |
-        s1
+             \startPat
+      c4 c c c
+      \stopPat
     }
 #+end_src
 
@@ -906,52 +1091,93 @@ s1
       \clef bass
   %%%%%%%%%% 127 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 128 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 129 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 130 %%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 131 %%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 132 %%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 133 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 134 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 135 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 136 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 137 %%%%%%%%%%%
       |
-      s1
+      \clef treble
+      r2.
+      foca''8.\12   coaa'''16\14 ~
   %%%%%%%%%% 138 %%%%%%%%%%
-      |
-      s1 %\mark \default
+      \bar "||"
+      \mark \markup {
+  	\column {
+  	    \line {\raise #4 \sans \fontsize #9 \box \bold "D" }
+  	    \line {" "}
+  	}
+      }
+      coaa'''8. gsoba''16\13~
+      gsoba''8.  csoca'''16\15~
+      csoca'''8.   foca'''16\17~
+      foca'''8 foca'''8 
   %%%%%%%%%% 139 %%%%%%%%%%
       |
-      s1
+      dsoba'''8.\16 csoca'''16\15~
+      csoca'''8 gsoba''8\13~
+      gsoba''16  dsoba'''8.\16 ~
+      dsoba'''16 dsoba'''8.
   %%%%%%%%%% 140 %%%%%%%%%%
       |
-      s1
+      dsoba'''8  gsoba''8\13~
+      gsoba''16 gsoba''8.
+      foca''8.\12  foca''16
+      csoca'''8.\15  gsoba''16\13~
   %%%%%%%%%% 141 %%%%%%%%%%
       |
-      s1
+       gsoba''1
   %%%%%%%%%% 142 %%%%%%%%%%%
       |
-      s1
+            \clef bass
+
+           \startPat
+      c4 c c c
+      \stopPat
   }
 #+end_src
 
@@ -965,52 +1191,84 @@ s1
       \clef bass
   %%%%%%%%%% 143 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 144 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 145 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 146 %%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 147 %%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 148 %%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 149 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 150 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 151 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 152 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 153 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 154 %%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 155 %%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 156 %%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 157 %%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 158 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   }
 #+end_src
 
@@ -1023,52 +1281,84 @@ s1
       \clef bass
   %%%%%%%%%% 159 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 160 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 161 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 162 %%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 163 %%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 164 %%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 165 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 166 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 167 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 168 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 169 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 170 %%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 171 %%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 172 %%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 173 %%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 174 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   }
 #+end_src
 
@@ -1081,25 +1371,40 @@ s1
       \clef bass
   %%%%%%%%%% 175 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 176 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 177 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 178 %%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 179 %%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 180 %%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
   %%%%%%%%%% 181 %%%%%%%%%%%
       |
-      s1
+           \startPat
+      c4 c c c
+      \stopPat
+      \bar "|."
   }
 #+end_src
 
@@ -1381,7 +1686,6 @@ s1
       s1
   %%%%%%%%%% 54 %%%%%%%%%%
       |
-%      \mark \default
       r2 g,,2\glissando
   %%%%%%%%%% 55 %%%%%%%%%%%
       |
@@ -2144,12 +2448,12 @@ s1
       s1
   %%%%%%%%%% 52 %%%%%%%%%%
       |
-      c,,,1^\markup {
-      	      \epsfile #X #28 #"/Volumes/Freedom/Dropbox/Music/pieces/dan_tranh_solo/score/includes/img/gran_noise_1.eps"
-      	  }
+      s1
   %%%%%%%%%% 53 %%%%%%%%%%
       |
-      s1\mark \default
+      c,,,1^\markup {
+  	\epsfile #X #28 #"/Volumes/Freedom/Dropbox/Music/pieces/dan_tranh_solo/score/includes/img/gran_noise_1.eps"
+      }
   %%%%%%%%%% 54 %%%%%%%%%%
       |
       s1
@@ -2354,7 +2658,6 @@ Use this replace-regexp to fix bar numbers:
       <eoaa,,,\1 g,,,\2 aoaa,,,\3 c,,\4 d,,\5>1~\pppp\<
   %%%%%%%%%% 108 %%%%%%%%%%
       |
-      \mark \default
       <eoaa,,,\1 g,,,\2 aoaa,,,\3 c,,\4 d,,\5>1\sfz\>
   %%%%%%%%%% 109 %%%%%%%%%%
       |
@@ -2469,7 +2772,7 @@ Use this replace-regexp to fix bar numbers:
       s1
   %%%%%%%%%% 138 %%%%%%%%%%
       |
-      s1 \mark \default
+      s1 
   %%%%%%%%%% 139 %%%%%%%%%%
       |
       s1
