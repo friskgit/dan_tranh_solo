@@ -6,7 +6,7 @@
         \override TextScript.Y-offset = #-3
         s4_\markup {
     	\epsfile #Y #6 #"/Volumes/Freedom/Dropbox/Music/pieces/dan_tranh_solo/score/includes/img/intro_cloud_2.eps"
-        }
+        } \mark \markup {\sans "0'00''"}
 	s2.
         s1*3
     %%%%%%%%%% 5 %%%%%%%%%%%
@@ -83,7 +83,10 @@
         s1
 %%%%%%%%%% 14 %%%%%%%%%%%
         |
-        r2
+	<<
+	  {s2\mark \markup {\sans \box "0'36''"}}\\
+	  {r2}
+	>>
 	r8 c,,,8 c,,,4
         %%%%%%%%%% 15 %%%%%%%%%%%
         |

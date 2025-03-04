@@ -261,8 +261,10 @@ mydedication = "Nguyen Thanh Thuy"
 		\override TimeSignature.extra-offset = #'(-1 . 5.5)
 		\override TimeSignature.font-name = #"Helvetica"
 		\consists "Horizontal_bracket_engraver"
+		\override HorizontalBracket.direction = #DOWN
 	    }
 	    \context {
+		\Voice
 		\consists Pitch_squash_engraver
 	    }
 	    \context {

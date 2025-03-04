@@ -33,13 +33,13 @@ introAa = {
     \time 4/4
     <<
 	{
-      	    r4
+      	    r4 \mark \markup {\sans \box "0'16''"}
       	    foca'8\12 [  coaa''8\14 ]
       	    gsoba'8.\13  csoca''16\15~
-      	    csoca''16\15 [  foca''8.\17~ ]
+      	    csoca''16 [  foca''8.\17~ ]
 %%%%%%%%%% 6 %%%%%%%%%%%
       	    |
-      	    foca''16\17 [ foca''8\17  dsoba''16\16 ~ ]
+      	    foca''16 [ foca''8  dsoba''16\16 ~ ]
       	    dsoba''8\16  csoca''8\15~
       	    csoca''2
 	}\\
@@ -94,7 +94,8 @@ introAa = {
     >>
 %%%%%%%%%% 14 %%%%%%%%%%%
     \mybracket
-    eoaa,,4\1-\markup {
+    eoaa,,4\1
+    -\markup {
 	\with-dimensions #'(0 . 0) #'(0 . 0)
 	\box
 	\with-dimensions #'(-2 . 15) #'(-6 . 7)
@@ -103,9 +104,6 @@ introAa = {
 										   "Improvise with the tuning"
 									       "of the thre bottom strings."
 										 " "}}}}
-									     
-							  
-    
     g,,4\2 aoaa,,\3 c,4\4
 %%%%%%%%%% 15 %%%%%%%%%%%
     |
@@ -148,6 +146,7 @@ introBa = {
     \stopPat
 %%%%%%%%%% 22 %%%%%%%%%%
     |
+    \mark \markup {\sans \box "1'24''"}
     \startPat
     c4 c c c
     \stopPat
@@ -192,7 +191,8 @@ introBa = {
     s1
 %%%%%%%%%% 32 %%%%%%%%%%%
     |
-    s1
+    s2\mark \markup {\sans \box "2'06''"}
+    s2
 }
 
 %%%%%%%%%% instrument name %%%%%%%%%%%
@@ -235,6 +235,7 @@ introCa = {
     \stopPat
 %%%%%%%%%% 40 %%%%%%%%%%%
     |
+    \mark \markup {\sans \box "2'36''"}
          \startPat
     c4 c c c
     \stopPat
@@ -287,7 +288,7 @@ introCa = {
   %%%%%%%%%% 49 %%%%%%%%%%%
       |
            \startPat
-  c4 c c c
+  c4 c c c\mark \markup {\sans \box "3'12''"}
   \stopPat
   %%%%%%%%%% 50 %%%%%%%%%%%
       |
@@ -313,7 +314,7 @@ introCa = {
 	    \line {" "}
 	}
   }
-      r2
+      r2 \mark \markup {\sans \box "3'28''"}
 <<
     {
 	foca'4\12  coaa''4\14
@@ -618,108 +619,115 @@ partBda = {
 	}
   }
     \clef treble
-          r4
-    foca''8\12  coaa'''8\14
+          r4  \mark \markup {\sans \box "7'08''"}
+    foca''8\12\pp  coaa'''8\14
     gsoba''8.\13  csoca'''16\15~
-    csoca'''16   foca'''8.\17~ 
+    csoca'''16   foca'''8.\17~\<
 %%%%%%%%%% 109 %%%%%%%%%%
     |
-    foca'''16  foca'''8\17  dsoba'''16 ~ 
-    dsoba'''8  csoca'''8\15
-    gsoba''8\13   dsoba'''8\16 ~   dsoba'''16 dsoba'''8.
+    foca'''16  foca'''8.
+    foca'''4~
+    foca'''16 foca'''8.~
+    foca'''8.\!\mf dsoba'''16 ~\p
 %%%%%%%%%% 110 %%%%%%%%%%
     |
-    dsoba'''8   gsoba''8\13 ~
-    gsoba''16   foca''8.\12
-    csoca'''8\15 csoca'''8~
-    csoca'''4
+    dsoba'''8  csoca'''8\15
+    gsoba''8\13\<  dsoba'''8\16 ~
+    dsoba'''16 dsoba'''8.
+    dsoba'''4
 %%%%%%%%%% 111 %%%%%%%%%%%
     |
-    \clef bass
-    \startPat
-  c4 c c c
-  \stopPat
+    dsoba'''8\!\f   gsoba''8\13 ~\p
+    gsoba''16   foca''8.\12
+    csoca'''8\15\< csoca'''8~
+    csoca'''16~ csoca'''8.
 }
 
 %%%%%%%%%% instrument name %%%%%%%%%%%
-partCaa = {
-    \clef bass
-%%%%%%%%%% 112 %%%%%%%%%%%
-    |
-  \startPat
-  c4 c c c
-  \stopPat
-%%%%%%%%%% 113 %%%%%%%%%%%
-    |
- \startPat
-  c4 c c c
-  \stopPat
-%%%%%%%%%% 114 %%%%%%%%%%
-    |
-         \startPat
-  c4 c c c
-  \stopPat
-%%%%%%%%%% 115 %%%%%%%%%%
-    |
-         \startPat
-  c4 c c c
-  \stopPat
-%%%%%%%%%% 116 %%%%%%%%%%
-    |
-         \startPat
-  c4 c c c
-  \stopPat
-%%%%%%%%%% 117 %%%%%%%%%%%
-    |
-         \startPat
-  c4 c c c
-  \stopPat
-%%%%%%%%%% 118 %%%%%%%%%%%
-    |
-         \startPat
-  c4 c c c
-  \stopPat
-%%%%%%%%%% 119 %%%%%%%%%%%
-    |
-         \startPat
-  c4 c c c
-  \stopPat
-%%%%%%%%%% 120 %%%%%%%%%%%
-    |
-         \startPat
-  c4 c c c
-  \stopPat
+  partCaa = {
+     
+  %%%%%%%%%% 112 %%%%%%%%%%%
+      |
+      csoca'''4\!\f
+      foca''8\12\p  coaa'''8\14
+      gsoba''8.\13  csoca'''16\15~\<
+      csoca'''4
+  %%%%%%%%%% 113 %%%%%%%%%%%
+      |
+      csoca'''4
+      csoca'''4~
+      csoca'''16 csoca'''8.~
+      csoca'''8. csoaa'''16~
+  %%%%%%%%%% 114 %%%%%%%%%%
+      |
+      csoaa'''2\!\f
+      r2
+  %%%%%%%%%% 115 %%%%%%%%%%
+      |
+      r4
+      foca''8\12\pp  coaa'''8\14
+      gsoba''8.\13  csoca'''16\15~
+      csoca'''16   foca'''8.\17~\<
+  %%%%%%%%%% 116 %%%%%%%%%%
+      |
+      foca'''16  foca'''8.
+      foca'''4~
+      foca'''16 foca'''8.~\!\f\>
+      foca'''8. foca'''16~
+  %%%%%%%%%% 117 %%%%%%%%%%%
+      |
+      foca'''4
+      foca'''4
+      foca'''8. foca'''16~
+      foca'''8 foca'''8\!\p
+  %%%%%%%%%% 118 %%%%%%%%%%%
+      |
+      r1
+  %%%%%%%%%% 119 %%%%%%%%%%%
+      |
+      dsoba'''8  csoca'''8\15
+      gsoba''8\13  dsoba'''8\16 ~\<
+      dsoba'''16 dsoba'''8.
+      dsoba'''4\!\f\>
+  %%%%%%%%%% 120 %%%%%%%%%%%
+      |
+      dsoba'''8. dsoba'''16~
+      dsoba'''8 dsoba'''8\!\p
+	r8   gsoba''8\13 ~
+	  gsoba''16   foca''8.\12
 %%%%%%%%%% 121 %%%%%%%%%%%
-    |
-         \startPat
-  c4 c c c
-  \stopPat
+      |
+      csoca'''8\15\< csoca'''8~
+      csoca'''16~ csoca'''8.~
+      csoca'''16 csoca'''8.~
+      csoca'''4\!\mf
 %%%%%%%%%% 122 %%%%%%%%%%
-    |
-         \startPat
-  c4 c c c
-  \stopPat
-%%%%%%%%%% 123 %%%%%%%%%%
-    |
-         \startPat
-  c4 c c c
-  \stopPat
-%%%%%%%%%% 124 %%%%%%%%%%
-    |
-         \startPat
-  c4 c c c
-  \stopPat
-%%%%%%%%%% 125 %%%%%%%%%%
-    |
-         \startPat
-  c4 c c c
-  \stopPat
-%%%%%%%%%% 126 %%%%%%%%%%%
-    |
-         \startPat
-  c4 c c c
-  \stopPat
-}
+      |
+      \clef bass
+           \startPat
+    c4 c c c
+    \stopPat
+  %%%%%%%%%% 123 %%%%%%%%%%
+      |
+           \startPat
+    c4 c c c
+    \stopPat
+  %%%%%%%%%% 124 %%%%%%%%%%
+      |
+           \startPat
+    c4 c c c
+    \stopPat
+  %%%%%%%%%% 125 %%%%%%%%%%
+      |
+           \startPat
+    c4 c c c
+    \stopPat
+  %%%%%%%%%% 126 %%%%%%%%%%%
+      |
+           \startPat
+    c4 c c c
+    \stopPat
+  }
 
 %%%%%%%%%% instrument name %%%%%%%%%%%
 partCba = {
@@ -783,11 +791,11 @@ partCba = {
     \bar "||"
     \mark \markup {
 	\column {
-	    \line {\raise #4 \sans \fontsize #9 \box \bold "D" }
+	    \line { \sans \fontsize #9 \box \bold "D" }
 	    \line {" "}
 	}
     }
-    coaa'''8. gsoba''16\13~
+    coaa'''8. gsoba''16\13~\mark \markup {\sans \box "9'08''"}
     gsoba''8.  csoca'''16\15~
     csoca'''8.   foca'''16\17~
     foca'''8 foca'''8 
@@ -808,94 +816,75 @@ partCba = {
      gsoba''1
 %%%%%%%%%% 142 %%%%%%%%%%%
     |
-          \clef bass
-
-         \startPat
-    c4 c c c
-    \stopPat
+    \clef treble
+    \ottava #1
+    \override TextSpanner.bound-details.left.text = \markup { \sans \tiny "Improvise and repeat ad lib."}
+    <coaa'''\14  gsoba'''\13  eoba'''\11>1\startTextSpan
 }
 
 %%%%%%%%%% instrument name %%%%%%%%%%%
 partDaa = {
-    \clef bass
+    \clef treble
 %%%%%%%%%% 143 %%%%%%%%%%%
     |
-         \startPat
-    c4 c c c
-    \stopPat
+    <coaa'''\14  gsoba''\13  foca'''\12>1
 %%%%%%%%%% 144 %%%%%%%%%%%
     |
-         \startPat
-    c4 c c c
-    \stopPat
+    <coaa'''\14  gsoba''\13  eoba'''\11>1
 %%%%%%%%%% 145 %%%%%%%%%%%
     |
-         \startPat
-    c4 c c c
-    \stopPat
+    <coaa'''\14  gsoba''\13  foca'''\12>1
 %%%%%%%%%% 146 %%%%%%%%%%
     |
-         \startPat
-    c4 c c c
-    \stopPat
+    <gsoba''\13  eoba''\11  coaa''\9>1
 %%%%%%%%%% 147 %%%%%%%%%%
     |
-         \startPat
-    c4 c c c
-    \stopPat
+    <coaa'''\14  foca''\12  doaa''\10>1
+
 %%%%%%%%%% 148 %%%%%%%%%%
     |
-         \startPat
-    c4 c c c
-    \stopPat
+    <coaa'''\14  foca''\12  doaa''\10>1
 %%%%%%%%%% 149 %%%%%%%%%%%
     |
-         \startPat
-    c4 c c c
-    \stopPat
+    <foca'''\17  coaa'''\14  foca''\12>1
 %%%%%%%%%% 150 %%%%%%%%%%%
     |
-         \startPat
-    c4 c c c
-    \stopPat
+    <coaa'''\14  gsoba''\13  doaa''\10>1
 %%%%%%%%%% 151 %%%%%%%%%%%
     |
-         \startPat
-    c4 c c c
-    \stopPat
+    <boaa''\19  foca'''\17  coaa'''\14>1
 %%%%%%%%%% 152 %%%%%%%%%%%
     |
-         \startPat
-    c4 c c c
-    \stopPat
+    <foca''\17  csoca'''\15  gsoba''\13>1\stopTextSpan
+    \ottava #0
 %%%%%%%%%% 153 %%%%%%%%%%%
     |
-         \startPat
+    \startPat
     c4 c c c
     \stopPat
 %%%%%%%%%% 154 %%%%%%%%%%
     |
-         \startPat
+    \startPat
     c4 c c c
     \stopPat
 %%%%%%%%%% 155 %%%%%%%%%%
     |
-         \startPat
+    \startPat
     c4 c c c
     \stopPat
 %%%%%%%%%% 156 %%%%%%%%%%
     |
-         \startPat
+    \startPat
     c4 c c c
     \stopPat
 %%%%%%%%%% 157 %%%%%%%%%%
     |
-         \startPat
+    \startPat
     c4 c c c
     \stopPat
 %%%%%%%%%% 158 %%%%%%%%%%%
     |
-         \startPat
+    \startPat
     c4 c c c
     \stopPat
 }
