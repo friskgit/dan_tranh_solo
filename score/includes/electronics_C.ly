@@ -6,7 +6,7 @@
         \override TextScript.Y-offset = #-3
         s4_\markup {
     	\epsfile #Y #6 #"/Volumes/Freedom/Dropbox/Music/pieces/dan_tranh_solo/score/includes/img/intro_cloud_2.eps"
-        } \mark \markup {\sans "0'00''"}
+        } % \mark \markup {\sans "0'00''"}
 	s2.
         s1*3
     %%%%%%%%%% 5 %%%%%%%%%%%
@@ -183,63 +183,63 @@ introBc = {
 }
 
 %%%%%%%%%% electronics %%%%%%%%%%%
-  introCc = {
-  %%%%%%%%%% 33 %%%%%%%%%%%
-      |
-      < asoaa,\8 coaa\9 eoba\11>1 \laissezVibrer
-  %%%%%%%%%% 34 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 35 %%%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 36 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 37 %%%%%%%%%%
-      |
-      \clef bass
-      r2 c,,2\laissezVibrer
-  %%%%%%%%%% 38 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 39 %%%%%%%%%%%
-      |
-      c,,2.\laissezVibrer
-      c,,4\laissezVibrer
-  %%%%%%%%%% 40 %%%%%%%%%%%
-      |
-     <eoaa,, aoaa,, c,>1
-  %%%%%%%%%% 41 %%%%%%%%%%%
-      |
-      c,,2\laissezVibrer
-      c,,2\laissezVibrer
-  %%%%%%%%%% 42 %%%%%%%%%%%
-      |
-      r2
-      <asoaa,, coaa, eoba,>2\laissezVibrer
-  %%%%%%%%%% 43 %%%%%%%%%%%
-      |
-s1
-  %%%%%%%%%% 44 %%%%%%%%%%
-      |
-      s1
-  %%%%%%%%%% 45 %%%%%%%%%%
-      |
-      r2.
-      \clef treble
-      <doaa, foca, gsoba,>4~
-  %%%%%%%%%% 46 %%%%%%%%%%
-      |
-      <doaa, foca, gsoba,>2.\laissezVibrer
-      <coaa eoba foca>4~
-  %%%%%%%%%% 47 %%%%%%%%%%
-      |
-      <coaa eoba foca>1\laissezVibrer
-  %%%%%%%%%% 48 %%%%%%%%%%%
-      |
-      s1
-  }
+introCc = {
+%%%%%%%%%% 33 %%%%%%%%%%%
+    |
+    < asoaa,\8 coaa\9 eoba\11>1~
+%%%%%%%%%% 34 %%%%%%%%%%%
+    |
+    < asoaa,\8 coaa\9 eoba\11>2\pp
+	< fsoba,\7 coaa\9 doaa\10>2~
+%%%%%%%%%% 35 %%%%%%%%%%%
+    |
+    < fsoba,\7 coaa\9 doaa\10>1\laissezVibrer
+%%%%%%%%%% 36 %%%%%%%%%%
+    |
+    s1
+%%%%%%%%%% 37 %%%%%%%%%%
+    |
+	s1
+%%%%%%%%%% 38 %%%%%%%%%%
+    |
+    \clef bass
+    r2 c,,2\laissezVibrer
+%%%%%%%%%% 39 %%%%%%%%%%%
+    |
+	s1
+%%%%%%%%%% 40 %%%%%%%%%%%
+    |
+   r2. <eoaa,,\1 aoaa,,\3 c,\4>4~
+%%%%%%%%%% 41 %%%%%%%%%%%
+    |
+    <eoaa,, aoaa,, c,>1 \laissezVibrer
+%%%%%%%%%% 42 %%%%%%%%%%%
+    |
+    s1
+%%%%%%%%%% 43 %%%%%%%%%%%
+    |
+    \clef treble
+    r4.
+    <foca,\12 coaa,\9 eoba,\11>8~ \mark \markup {\sans \box "2'50''"}
+    <foca, coaa, eoba,>2~
+%%%%%%%%%% 44 %%%%%%%%%%
+    |
+    <foca, coaa, eoba,>1\laissezVibrer
+%%%%%%%%%% 45 %%%%%%%%%%
+    |
+    s1
+%%%%%%%%%% 46 %%%%%%%%%%
+    |
+    r2.
+    <doaa, foca, gsoba,>4~
+%%%%%%%%%% 47 %%%%%%%%%%
+    |
+    <doaa, foca, gsoba,>2.\laissezVibrer
+    <coaa, eoba, foca,>4~
+%%%%%%%%%% 48 %%%%%%%%%%%
+    |
+    <coaa, eoba, foca,>1\laissezVibrer
+}
 
 %%%%%%%%%% electronics %%%%%%%%%%%
 partBac = {
@@ -247,14 +247,15 @@ partBac = {
 
 %%%%%%%%%% 49 %%%%%%%%%%%
     |
-    r4
-    <eoaa,,, aoaa,,, c,,>2.\laissezVibrer
+    s1
 %%%%%%%%%% 50 %%%%%%%%%%%
     |
-    s1
+    r8
+    <eoaa,,, aoaa,,, c,,>4.~
+          <eoaa,,, aoaa,,, c,,>2~
 %%%%%%%%%% 51 %%%%%%%%%%%
     |
-    s1
+    <eoaa,,, aoaa,,, c,,>1 \laissezVibrer
 %%%%%%%%%% 52 %%%%%%%%%%
     |
     s1
@@ -406,7 +407,7 @@ partBcc = {
 
 %%%%%%%%%% instrument name %%%%%%%%%%%
 partBdc = {
-    \clef bass
+
 %%%%%%%%%% 96 %%%%%%%%%%%
     |
     s1
@@ -415,33 +416,36 @@ partBdc = {
     s1
 %%%%%%%%%% 98 %%%%%%%%%%%
     |
-    s1
-%%%%%%%%%% 99 %%%%%%%%%%
-    |
     \clef treble
     r2.
-    <boaa'\19 foca'\17 coaa'\14>4~
+    <boaa'\19 foca'\17 coaa'\14>4~ \mark \markup {\sans \box "6'35''"}
+%%%%%%%%%% 99 %%%%%%%%%%
+    |
+   <boaa' foca' coaa'>1
 %%%%%%%%%% 100 %%%%%%%%%%
     |
-    <boaa' foca' coaa'>1
+    s1
 %%%%%%%%%% 101 %%%%%%%%%%
     |
-    s1
+    \mark \markup {\sans \box "6'44''"}
+    <gsoba'\13 eoba'\11 doaa'\9>1\laissezVibrer
 %%%%%%%%%% 102 %%%%%%%%%%%
     |
-    <gsoba'\13 eoba'\11 doaa'\9>1\laissezVibrer
+    s1
 %%%%%%%%%% 103 %%%%%%%%%%%
     |
-    s1
+    \mark \markup {\sans \box "6'52''"}
+    <coaa'\14 foca'\12 doaa'\10>1\laissezVibrer
 %%%%%%%%%% 104 %%%%%%%%%%%
     |
-    <coaa'\14 foca'\12 doaa'\10>1\laissezVibrer
+    s1 
 %%%%%%%%%% 105 %%%%%%%%%%%
     |
-    s1
+    \mark \markup {\sans \box "7'00''"}
+    <coaa'\14 gsoba'\13 doaa'\10>1\laissezVibrer
 %%%%%%%%%% 106 %%%%%%%%%%%
     |
-    <coaa'\14 gsoba'\13 doaa'\10>1\laissezVibrer
+	 s1
 %%%%%%%%%% 107 %%%%%%%%%%
     |
     \clef bass

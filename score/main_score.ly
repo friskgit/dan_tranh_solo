@@ -235,6 +235,8 @@ mydedication = "Nguyen Thanh Thuy"
 		\fixed c'' {
 		    \numericTimeSignature
 		    \override Staff.TimeSignature.transparent = ##t\tempo 4 = 60
+		    \override Staff.StringNumber.font-size = -4
+		    \override Staff.StringNumber.font-name = "Helvetica"
 
 		    \introAc
 		    \introBc
@@ -275,8 +277,8 @@ mydedication = "Nguyen Thanh Thuy"
 	}
 	\midi {}
     }
-    \pageBreak
-    \markup {" "}
-    \pageBreak
-    \markup {" "}
+%    \pageBreak
+%    \markup {" "}
+%    \pageBreak
+%    \markup {" "}
 }

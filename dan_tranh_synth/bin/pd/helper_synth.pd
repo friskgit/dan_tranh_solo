@@ -1,4 +1,4 @@
-#N canvas 340 263 1390 793 12;
+#N canvas 340 174 1390 793 12;
 #N canvas 272 293 1388 848 pitches 0;
 #X text 219 123 strings;
 #X obj 310 90 bng 19 250 50 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
@@ -626,7 +626,7 @@
 #X obj 203 497 s pluck_pos;
 #X obj 737 396 random 10;
 #X obj 181 359 pack 0 0 0.8 0 0;
-#N canvas 331 76 1469 1065 chords 0;
+#N canvas 136 31 1440 1052 chords 0;
 #X obj 88 1026 outlet;
 #X msg 71 203 3 \, 5 \, 7 \, 9;
 #X msg 213 459 7 \, 11 \, 13;
@@ -724,6 +724,7 @@
 #X floatatom 251 78 5 0 0 0 - - - 0;
 #X obj 339 50 spigot;
 #X obj 377 20 tgl 19 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000 0 1;
+#X msg 648 373 clear;
 #X connect 1 0 0 0;
 #X connect 2 0 0 0;
 #X connect 3 0 0 0;
@@ -841,6 +842,7 @@
 #X connect 93 7 80 0;
 #X connect 95 0 93 0;
 #X connect 96 0 95 1;
+#X connect 97 0 7 0;
 #X restore 413 47 pd chords;
 #N canvas 266 433 896 300 glissandos 0;
 #X obj 104 215 outlet;
@@ -968,7 +970,7 @@
 #X obj 561 465 noteoff 10 4000;
 #X obj 561 487 noteoff 11 4000;
 #X obj 561 509 noteoff 12 4000;
-#N canvas 317 138 1343 641 add_syn 0;
+#N canvas 317 138 1343 641 add_syn 1;
 #N canvas 0 350 1249 791 pitches 0;
 #X text 219 123 strings;
 #X obj 310 90 bng 19 250 50 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
@@ -1871,6 +1873,7 @@
 #X obj 972 356 s set_wave;
 #X obj 969 327 tgl 19 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000 0 1;
 #X msg 255 249 1000, f 6;
+#X msg 1061 189 1 2 4;
 #X connect 1 0 62 0;
 #X connect 1 1 0 0;
 #X connect 4 0 3 0;
@@ -1937,6 +1940,7 @@
 #X connect 65 0 64 0;
 #X connect 67 0 66 0;
 #X connect 68 0 59 0;
+#X connect 69 0 24 0;
 #X restore 550 47 pd add_syn;
 #X obj 509 98 s play_string_chords;
 #X floatatom 803 105 5 0 0 0 - - - 0;

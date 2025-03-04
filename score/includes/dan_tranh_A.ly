@@ -182,17 +182,20 @@ introBa = {
     \stopPat_\stopTextSpan
 %%%%%%%%%% 29 %%%%%%%%%%
     |
-    s1
+    R1
 %%%%%%%%%% 30 %%%%%%%%%%
     |
-    s1
+    R1
 %%%%%%%%%% 31 %%%%%%%%%%
     |
-    s1
+    R1
 %%%%%%%%%% 32 %%%%%%%%%%%
     |
-    s2\mark \markup {\sans \box "2'06''"}
-    s2
+    <<
+    {s2\mark \markup {\sans \box "2'06''"}
+    s2}\\
+    {R1}
+    >>
 }
 
 %%%%%%%%%% instrument name %%%%%%%%%%%
@@ -226,7 +229,7 @@ introCa = {
 %%%%%%%%%% 38 %%%%%%%%%%
     |
          \startPat
-    c4 c c c
+    c4 c c\mark \markup {\sans \box "2'30''"} c
     \stopPat
 %%%%%%%%%% 39 %%%%%%%%%%%
     |
@@ -235,9 +238,8 @@ introCa = {
     \stopPat
 %%%%%%%%%% 40 %%%%%%%%%%%
     |
-    \mark \markup {\sans \box "2'36''"}
          \startPat
-    c4 c c c
+    c4 c c c \mark \markup {\sans \box "2'36''"}
     \stopPat
 %%%%%%%%%% 41 %%%%%%%%%%%
     |
@@ -267,7 +269,7 @@ introCa = {
 %%%%%%%%%% 46 %%%%%%%%%%
     |
          \startPat
-    c4 c c c
+    c4 c c c\mark \markup {\sans \box "3'03''"}
     \stopPat
 %%%%%%%%%% 47 %%%%%%%%%%
     |
@@ -282,344 +284,359 @@ introCa = {
 }
 
 %%%%%%%%%% electronics %%%%%%%%%%%
-  partBaa = {
-      \clef bass
+partBaa = {
+    \clef bass
 
-  %%%%%%%%%% 49 %%%%%%%%%%%
-      |
-           \startPat
-  c4 c c c\mark \markup {\sans \box "3'12''"}
-  \stopPat
-  %%%%%%%%%% 50 %%%%%%%%%%%
-      |
-           \startPat
-  c4 c c c
-  \stopPat
-  %%%%%%%%%% 51 %%%%%%%%%%%
-      |
-           \startPat
-  c4 c c c
-  \stopPat
-  %%%%%%%%%% 52 %%%%%%%%%%
-      |
-           \startPat
-  c4 c c c
-  \stopPat
-  %%%%%%%%%% 53 %%%%%%%%%%
-	\bar "||"       
-      \clef treble
-	     \mark \markup {
+%%%%%%%%%% 49 %%%%%%%%%%%
+    |
+    \startPat
+    c4 c c c
+    \stopPat
+%%%%%%%%%% 50 %%%%%%%%%%%
+    |
+    \startPat
+    c4\mark \markup {\sans \box "3'16''"} c c c
+    \stopPat
+%%%%%%%%%% 51 %%%%%%%%%%%
+    |
+    \startPat
+    c4 c c c
+    \stopPat
+%%%%%%%%%% 52 %%%%%%%%%%
+    |
+    \startPat
+    c4 c c c
+    \stopPat
+%%%%%%%%%% 53 %%%%%%%%%%
+    \bar "||"       
+    \clef treble
+    \mark \markup {
 	\column {
 	    \line {\raise #4 \sans \fontsize #9 \box \bold "B" }
 	    \line {" "}
 	}
-  }
-      r2 \mark \markup {\sans \box "3'28''"}
-<<
-    {
-	foca'4\12  coaa''4\14
-  %%%%%%%%%% 54 %%%%%%%%%%
-      |
-      gsoba'4.\13  csoca''8\15~
-      csoca''8  foca''4.\17~
-  %%%%%%%%%% 55 %%%%%%%%%%%
-      |
-      foca''8 foca''4  dsoba''8\16 ~
-      dsoba''4  csoca''4\15
-  %%%%%%%%%% 56 %%%%%%%%%%%
-      |
-      gsoba'4\13
-	dsoba''4\16 ~
-      dsoba''8  dsoba''8 ~
-      dsoba''4~
-  %%%%%%%%%% 57 %%%%%%%%%%%
-      |
-      dsoba''1
- }\\
-    {
-	\ottava #-1
-	eoaa,2_\1~
-  %%%%%%%%%% 54 %%%%%%%%%%
-      |
-	eoaa,1~
-  %%%%%%%%%% 55 %%%%%%%%%%%
-      |
-	eoaa,2 eoaa,2~
-  %%%%%%%%%% 56 %%%%%%%%%%%
-      |
-	eoaa,4 eoaa,2 eoaa,4~
-  %%%%%%%%%% 57 %%%%%%%%%%%
-      |
-	eoaa,1\laissezVibrer
     }
-    
+    r2 \mark \markup {\sans \box "3'28''"}
+    <<
+	{
+	    foca'4\12  coaa''4\14
+%%%%%%%%%% 54 %%%%%%%%%%
+	    |
+	    gsoba'4.\13  csoca''8\15~
+	    csoca''8  foca''4.\17~
+%%%%%%%%%% 55 %%%%%%%%%%%
+	    |
+	    foca''8 foca''4  dsoba''8\16 ~
+	    dsoba''4  csoca''4\15
+%%%%%%%%%% 56 %%%%%%%%%%%
+	    |
+	    gsoba'4\13
+	    dsoba''4\16 ~
+	    dsoba''8  dsoba''8 ~
+	    dsoba''4~
+%%%%%%%%%% 57 %%%%%%%%%%%
+	    |
+	    dsoba''1
+	}\\
+	{
+	    \ottava #-1
+	    eoaa,2_\1~
+%%%%%%%%%% 54 %%%%%%%%%%
+	    |
+	    eoaa,1~
+%%%%%%%%%% 55 %%%%%%%%%%%
+	    |
+	    eoaa,2 eoaa,2~
+%%%%%%%%%% 56 %%%%%%%%%%%
+	    |
+	    eoaa,4 eoaa,2 eoaa,4~
+%%%%%%%%%% 57 %%%%%%%%%%%
+	    |
+	    eoaa,1\laissezVibrer
+	}
+	
     >>
-  %%%%%%%%%% 58 %%%%%%%%%%%
-      |
+%%%%%%%%%% 58 %%%%%%%%%%%
+    |
     \ottava #0
     \clef bass
     \startPat
-  c4 c c c
-  \stopPat
-  %%%%%%%%%% 59 %%%%%%%%%%%
+    c4 c c c
+    \stopPat
+%%%%%%%%%% 59 %%%%%%%%%%%
+    |
+    \startPat
+    c4 c c c
+    \stopPat
+%%%%%%%%%% 60 %%%%%%%%%%
+    |
+    \startPat
+    c4 c c c
+    \stopPat
+%%%%%%%%%% 61 %%%%%%%%%%
+    |
+    \startPat
+    c4 c c c
+    \stopPat
+%%%%%%%%%% 62 %%%%%%%%%%
+    |
+    \startPat
+    c4 c c c
+    \stopPat
+%%%%%%%%%% 63 %%%%%%%%%%
+    |
+    \startPat
+    c4 c c c
+    \stopPat
+%%%%%%%%%% 64 %%%%%%%%%%%
+    |
+    \startPat
+    c4 c c c
+    \stopPat
+}
+
+%%%%%%%%%% instrument name %%%%%%%%%%%
+  partBba = {
+      \clef bass
+  %%%%%%%%%% 65 %%%%%%%%%%%
       |
            \startPat
-  c4 c c c
-  \stopPat
-  %%%%%%%%%% 60 %%%%%%%%%%
+      c4 c c c
+      \stopPat
+  %%%%%%%%%% 66 %%%%%%%%%%%
       |
            \startPat
-  c4 c c c
-  \stopPat
-  %%%%%%%%%% 61 %%%%%%%%%%
+      c4 c c c
+      \stopPat
+  %%%%%%%%%% 67 %%%%%%%%%%%
       |
            \startPat
-  c4 c c c
-  \stopPat
-  %%%%%%%%%% 62 %%%%%%%%%%
+      c4 c c c
+      \stopPat
+  %%%%%%%%%% 68 %%%%%%%%%%
       |
            \startPat
-  c4 c c c
-  \stopPat
-  %%%%%%%%%% 63 %%%%%%%%%%
+      c4 c c c
+      \stopPat
+  %%%%%%%%%% 69 %%%%%%%%%%
       |
            \startPat
-  c4 c c c
-  \stopPat
-  %%%%%%%%%% 64 %%%%%%%%%%%
+      c4 c c c
+      \stopPat
+  %%%%%%%%%% 70 %%%%%%%%%%
       |
-      c1
+      \clef treble
+      \mark \markup {\sans \box "4'36''"}
+      goca'''1:32\18~\ppp\<
+  %%%%%%%%%% 71 %%%%%%%%%%%
+      |
+      goca'''1:32~
+  %%%%%%%%%% 72 %%%%%%%%%%%
+      |
+      goca'''1:32~
+  %%%%%%%%%% 73 %%%%%%%%%%%
+      |
+      goca'''1:32~\!\f\>
+  %%%%%%%%%% 74 %%%%%%%%%%%
+      |
+      goca'''1:32~
+  %%%%%%%%%% 75 %%%%%%%%%%%
+      |
+      goca'''1:32\!\mf
+  %%%%%%%%%% 76 %%%%%%%%%%
+      |
+%      \clef bass
+      \mark \markup {\sans \box "5'00''"}
+      \override NoteHead.style = #'cross
+      c''16        -\markup {
+ 	\with-dimensions #'(0 . 0) #'(0 . 0)
+ 	\box
+ 	\with-dimensions #'(-2 . 15) #'(-4 . 7)
+ 	\null}
+     ^\markup{ \hspace #-3.5 " " \sans {\tiny {\center-column \translate #'(3 . 0) {\string-lines
+ 										   "Play to the right of"
+										    "the fixed bridge."
+										    " "}}}}
+      e'' d'' a''
+      g'' c''' a'' e''
+      s4_\startTextSpan
+      s4
+  %%%%%%%%%% 77 %%%%%%%%%%
+      |
+           \startPat
+      c4 c c c
+      \stopPat
+  %%%%%%%%%% 78 %%%%%%%%%%
+      |
+           \startPat
+      c4 c c c
+      \stopPat
+  %%%%%%%%%% 79 %%%%%%%%%%
+      |
+           \startPat
+      c4 c c c
+      \stopPat
+  %%%%%%%%%% 80 %%%%%%%%%%%
+      |
+           \startPat
+      c4 c c c
+      \stopPat
   }
 
 %%%%%%%%%% instrument name %%%%%%%%%%%
-partBba = {
-    \clef bass
-%%%%%%%%%% 65 %%%%%%%%%%%
-    |
-         \startPat
-    c4 c c c
-    \stopPat
-%%%%%%%%%% 66 %%%%%%%%%%%
-    |
-         \startPat
-    c4 c c c
-    \stopPat
-%%%%%%%%%% 67 %%%%%%%%%%%
-    |
-         \startPat
-    c4 c c c
-    \stopPat
-%%%%%%%%%% 68 %%%%%%%%%%
-    |
-         \startPat
-    c4 c c c
-    \stopPat
-%%%%%%%%%% 69 %%%%%%%%%%
-    |
-         \startPat
-    c4 c c c
-    \stopPat
-%%%%%%%%%% 70 %%%%%%%%%%
-    |
-    \clef treble
-    goca'''1:32\18~\ppp\<
-%%%%%%%%%% 71 %%%%%%%%%%%
-    |
-    goca'''1:32~
-%%%%%%%%%% 72 %%%%%%%%%%%
-    |
-    goca'''1:32~
-%%%%%%%%%% 73 %%%%%%%%%%%
-    |
-    goca'''1:32~\!\f\>
-%%%%%%%%%% 74 %%%%%%%%%%%
-    |
-    goca'''1:32~
-%%%%%%%%%% 75 %%%%%%%%%%%
-    |
-    goca'''1:32~\!\mf
-%%%%%%%%%% 76 %%%%%%%%%%
-    |
-    \clef bass
-         \startPat
-    c4 c c c
-    \stopPat
-%%%%%%%%%% 77 %%%%%%%%%%
-    |
-         \startPat
-    c4 c c c
-    \stopPat
-%%%%%%%%%% 78 %%%%%%%%%%
-    |
-         \startPat
-    c4 c c c
-    \stopPat
-%%%%%%%%%% 79 %%%%%%%%%%
-    |
-         \startPat
-    c4 c c c
-    \stopPat
-%%%%%%%%%% 80 %%%%%%%%%%%
-    |
-         \startPat
-    c4 c c c
-    \stopPat
-}
-
-%%%%%%%%%% instrument name %%%%%%%%%%%
-partBca = {
-    \clef bass
-%%%%%%%%%% 81 %%%%%%%%%%%
-    |
-         \startPat
-    c4 c c c
-    \stopPat
-%%%%%%%%%% 82 %%%%%%%%%%%
-    |
-         \startPat
-    c4 c c c
-    \stopPat
-%%%%%%%%%% 83 %%%%%%%%%%%
-    |
-         \startPat
-    c4 c c c
-    \stopPat
-%%%%%%%%%% 84 %%%%%%%%%%
-    |
-         \startPat
-    c4 c c c
-    \stopPat
-%%%%%%%%%% 85 %%%%%%%%%%
-    |
-         \startPat
-    c4 c c c
-    \stopPat
-%%%%%%%%%% 86 %%%%%%%%%%
-    |
-         \startPat
-    c4 c c c
-    \stopPat
-%%%%%%%%%% 87 %%%%%%%%%%%
-    |
-         \startPat
-    c4 c c c
-    \stopPat
-%%%%%%%%%% 88 %%%%%%%%%%%
-    |
-         \startPat
-    c4 c c c
-    \stopPat
-%%%%%%%%%% 89 %%%%%%%%%%%
-    |
-         \startPat
-    c4 c c c
-    \stopPat
-%%%%%%%%%% 90 %%%%%%%%%%%
-    |
-         \startPat
-    c4 c c c
-    \stopPat
-%%%%%%%%%% 91 %%%%%%%%%%%
-    |
-         \startPat
-    c4 c c c
-    \stopPat
-%%%%%%%%%% 92 %%%%%%%%%%
-    |
-         \startPat
-    c4 c c c
-    \stopPat
-%%%%%%%%%% 93 %%%%%%%%%%
-    |
-         \startPat
-    c4 c c c
-    \stopPat
-%%%%%%%%%% 94 %%%%%%%%%%
-    |
-         \startPat
-    c4 c c c
-    \stopPat
-%%%%%%%%%% 95 %%%%%%%%%%
-    |
-         \startPat
-    c4 c c c
-    \stopPat
-%%%%%%%%%% 96 %%%%%%%%%%%
-    |
-         \startPat
-    c4 c c c
-    \stopPat
-}
+  partBca = {
+%      \clef bass
+  %%%%%%%%%% 81 %%%%%%%%%%%
+      |
+           \startPat
+      c4\decresc c c c
+      \stopPat
+  %%%%%%%%%% 82 %%%%%%%%%%%
+      |
+           \startPat
+      c4 c c c
+      \stopPat
+  %%%%%%%%%% 83 %%%%%%%%%%%
+      |
+           \startPat
+      c4 c c c
+      \stopPat
+  %%%%%%%%%% 84 %%%%%%%%%%
+      |
+           \startPat
+      c4 c c c
+      \stopPat
+  %%%%%%%%%% 85 %%%%%%%%%%
+      |
+           \startPat
+      c4 c c c
+      \stopPat
+  %%%%%%%%%% 86 %%%%%%%%%%
+      |
+           \startPat
+      c4 c c c
+      \stopPat
+  %%%%%%%%%% 87 %%%%%%%%%%%
+      |
+           \startPat
+      c4 c c c
+      \stopPat
+  %%%%%%%%%% 88 %%%%%%%%%%%
+      |
+           \startPat
+      c4 c c c
+      \stopPat
+  %%%%%%%%%% 89 %%%%%%%%%%%
+      |
+           \startPat
+      c4 c c c
+      \stopPat
+  %%%%%%%%%% 90 %%%%%%%%%%%
+      |
+           \startPat
+      c4 c c c
+      \stopPat
+  %%%%%%%%%% 91 %%%%%%%%%%%
+      |
+           \startPat
+      c4 c c c
+      \stopPat
+  %%%%%%%%%% 92 %%%%%%%%%%
+      |
+           \startPat
+      c4 c c c
+      \stopPat
+  %%%%%%%%%% 93 %%%%%%%%%%
+      |
+           \startPat
+      c4\! \ppp c c c\stopTextSpan
+      \stopPat
+  %%%%%%%%%% 94 %%%%%%%%%%
+      |
+      \mark \markup {\sans \box "6'12''"}
+           \startPat
+      c4 c c c
+      \stopPat
+  %%%%%%%%%% 95 %%%%%%%%%%
+      |
+           \startPat
+      c4 c c c
+      \stopPat
+  %%%%%%%%%% 96 %%%%%%%%%%%
+      |
+           \startPat
+      c4 c c c
+      \stopPat
+  }
 
 %%%%%%%%%% instrument name %%%%%%%%%%%
 partBda = {
-    \clef bass
 %%%%%%%%%% 97 %%%%%%%%%%%
     |
-         \startPat
-  c4 c c c
-  \stopPat
+    \startPat
+    c4 c c c
+    \stopPat
 %%%%%%%%%% 98 %%%%%%%%%%%
     |
-         \startPat
-  c4 c c c
-  \stopPat
+    \startPat
+    c4 c c c
+    \stopPat
 %%%%%%%%%% 99 %%%%%%%%%%
     |
-         \startPat
-  c4 c c c
-  \stopPat
+    \startPat
+    c4 c c c
+    \stopPat
 %%%%%%%%%% 100 %%%%%%%%%%
     |
-         \startPat
-  c4 c c c
-  \stopPat
+    \startPat
+    c4 c c c
+    \stopPat
 %%%%%%%%%% 101 %%%%%%%%%%
     |
-         \startPat
-  c4 c c c
-  \stopPat
+    \startPat
+    c4 c c c
+    \stopPat
 %%%%%%%%%% 102 %%%%%%%%%%%
     |
-         \startPat
-  c4 c c c
-  \stopPat
+    \startPat
+    c4 c c c
+    \stopPat
 %%%%%%%%%% 103 %%%%%%%%%%%
     |
-         \startPat
-  c4 c c c
-  \stopPat
+    \startPat
+    c4 c c c
+    \stopPat
 %%%%%%%%%% 104 %%%%%%%%%%%
     |
-         \startPat
-  c4 c c c
-  \stopPat
+    \startPat
+    c4 c c c
+    \stopPat
 %%%%%%%%%% 105 %%%%%%%%%%%
     |
-         \startPat
-  c4 c c c
-  \stopPat
+    \startPat
+    c4 c c c
+    \stopPat
 %%%%%%%%%% 106 %%%%%%%%%%%
     |
 
-         \startPat
-  c4 c c c
-  \stopPat
+    \startPat
+    c4 c c c
+    \stopPat
 %%%%%%%%%% 107 %%%%%%%%%%
     |
-         \startPat
-  c4 c c c
-  \stopPat
+    \startPat
+    c4 c c c
+    \stopPat
 %%%%%%%%%% 108 %%%%%%%%%%
     \bar "||"
- \mark \markup {
+    \mark \markup {
 	\column {
 	    \line {\raise #4 \sans \fontsize #9 \box \bold "C" }
 	    \line {" "}
 	}
-  }
+    }
     \clef treble
-          r4  \mark \markup {\sans \box "7'08''"}
+    r4  \mark \markup {\sans \box "7'08''"}
     foca''8\12\pp  coaa'''8\14
     gsoba''8.\13  csoca'''16\15~
     csoca'''16   foca'''8.\17~\<
@@ -664,6 +681,7 @@ partBda = {
       r2
   %%%%%%%%%% 115 %%%%%%%%%%
       |
+      \mark \markup {\sans \box "7'36''"}
       r4
       foca''8\12\pp  coaa'''8\14
       gsoba''8.\13  csoca'''16\15~
@@ -685,6 +703,7 @@ partBda = {
       r1
   %%%%%%%%%% 119 %%%%%%%%%%%
       |
+      \mark \markup {\sans \box "7'52''"}
       dsoba'''8  csoca'''8\15
       gsoba''8\13  dsoba'''8\16 ~\<
       dsoba'''16 dsoba'''8.
@@ -813,10 +832,11 @@ partCba = {
     csoca'''8.\15  gsoba''16\13~
 %%%%%%%%%% 141 %%%%%%%%%%
     |
-     gsoba''1
+     gsoba''1 \break
 %%%%%%%%%% 142 %%%%%%%%%%%
     |
     \clef treble
+    \mark \markup {\sans \box "9'24''"}
     \ottava #1
     \override TextSpanner.bound-details.left.text = \markup { \sans \tiny "Improvise and repeat ad lib."}
     <coaa'''\14  gsoba'''\13  eoba'''\11>1\startTextSpan
@@ -876,9 +896,10 @@ partDaa = {
     |
     \startPat
     c4 c c c
-    \stopPat
+    \stopPat\break
 %%%%%%%%%% 157 %%%%%%%%%%
     |
+    \mark \markup {\sans \box "10'24''"}
     \startPat
     c4 c c c
     \stopPat
@@ -891,7 +912,6 @@ partDaa = {
 
 %%%%%%%%%% instrument name %%%%%%%%%%%
 partDba = {
-    \clef bass
 %%%%%%%%%% 159 %%%%%%%%%%%
     |
          \startPat
@@ -911,9 +931,10 @@ partDba = {
     |
          \startPat
     c4 c c c
-    \stopPat
+    \stopPat \break
 %%%%%%%%%% 163 %%%%%%%%%%
     |
+    \mark \markup {\sans \box "10'48''"}
          \startPat
     c4 c c c
     \stopPat
@@ -941,9 +962,10 @@ partDba = {
     |
          \startPat
     c4 c c c
-    \stopPat
+    \stopPat \break
 %%%%%%%%%% 169 %%%%%%%%%%%
     |
+    \mark \markup {\sans \box "11'12''"}
          \startPat
     c4 c c c
     \stopPat
@@ -976,16 +998,16 @@ partDba = {
 
 %%%%%%%%%% instrument name %%%%%%%%%%%
 partDca = {
-    \clef bass
 %%%%%%%%%% 175 %%%%%%%%%%%
     |
          \startPat
     c4 c c c
-    \stopPat
+    \stopPat \break
 %%%%%%%%%% 176 %%%%%%%%%%%
     |
+          \mark \markup {\sans \box "11'40''"}
          \startPat
-    c4 c c c
+    c4\decresc c c c
     \stopPat
 %%%%%%%%%% 177 %%%%%%%%%%%
     |
@@ -1010,7 +1032,7 @@ partDca = {
 %%%%%%%%%% 181 %%%%%%%%%%%
     |
          \startPat
-    c4 c c c
+    c4 c c c\!\pppp
     \stopPat
     \bar "|."
 }
